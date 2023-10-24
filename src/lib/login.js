@@ -16,7 +16,7 @@ function login(navigateTo) {
     title.textContent = 'Login';
     buttonLogin.textContent = 'go';
     buttonRegister.textContent = 'Register';
-    buttonGoogle.textContent = 'Google'
+    buttonGoogle.textContent = 'Google';
   
     buttonReturn.textContent = 'Return to home';
     buttonReturn.addEventListener('click', () => {
