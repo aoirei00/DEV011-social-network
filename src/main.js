@@ -6,12 +6,14 @@
 import home from './lib/home';
 import login from './lib/login.js';
 import error from './lib/error.js';
+import wall from './lib/wall.js';
 
 
 const routes = [
     { path: '/', component: home },
     { path: '/login', component: login },
     { path: '/error', component: error },
+    { path: '/wall', component: wall },
 ];
 
 
