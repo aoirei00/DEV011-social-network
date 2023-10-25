@@ -18,7 +18,7 @@ function home(navigateTo) {
   
     image.src = './img-sn/festilogo1.png';
     title.textContent = 'Welcome to Festigram, the largest community of concerts and festivals around the world!';
-    other.textContent = 'You can access with you Google Account';
+    other.textContent = 'You can access with your Google Account';
     buttonGoogle.textContent = 'Google';
    
     buttonLogin.textContent = 'Login';

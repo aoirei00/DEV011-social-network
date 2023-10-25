@@ -15,7 +15,6 @@ body {
 .imgho {
     width: 20%;
     margin-top: 7%;
-    margin-bottom: 10%;
 }
 .textho {
     color: cornsilk;
@@ -33,6 +32,16 @@ body {
     margin-left: 5%;
     margin-right: 5%;
 }
+.otherOption {
+    margin-top: 3%;
+    color: cornsilk;
+    font-size: smaller;
+}
+.googlelog {
+   background-image: url('../../img-sn/google.png');
+   margin-top: 2%;
+   border-radius: 500px;
+}
 
 /* home mobile view */
 @media (max-width: 800px) {
@@ -43,6 +52,7 @@ body {
     .imgho {
         width: 50%;
         margin-top: 70%;
+        margin-bottom: 10%;
     }
     .textho {
         color: cornsilk;

@@ -23,7 +23,7 @@ function register(navigateTo) {
                 <label for="emailAdress">Email adress</label>
                   <input type="text" id="emailAdress" />
 
-                <label for="name">Name</label>
+                <label for="fullName">Name</label>
                   <input type="text" id="name" />
 
                 <label for="password">Password</label>
