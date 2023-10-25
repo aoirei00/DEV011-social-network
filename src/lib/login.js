@@ -1,4 +1,6 @@
 // file login.js
+import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
+
 function login(navigateTo) {
     const section = document.createElement('section');
     section.classList.add('sectionlo')
@@ -26,6 +28,28 @@ function login(navigateTo) {
     buttonLogin.textContent = 'go';
     buttonRegister.textContent = 'Register';
     buttonGoogle.textContent = 'Google';
+    buttonGoogle.addEventListener('click', () => {
+        const auth = getAuth();
+        const provider = new GoogleAuthProvider();
+      
+        // Abre una ventana emergente para iniciar sesión con Google
+        signInWithPopup(auth, provider)
+          .then((result) => {
+            // El usuario ha iniciado sesión con éxito con Google
+            const user = result.user;
+            console.log('Usuario autenticado con éxito:', user);
+            history.pushState(null, null, '/wall');
+
+            //  llama a la función de navegación para cargar la vista "wall"
+            navigateTo('/wall');
+          })
+          .catch((error) => {
+            // Handle Errors here
+            const errorCode = error.code;
+            const errorMessage = error.message;
+            console.error('Error de autenticación con Google:', errorCode, errorMessage);
+          });
+      });
   
     buttonReturn.textContent = 'Return to home';
     buttonReturn.addEventListener('click', () => {
