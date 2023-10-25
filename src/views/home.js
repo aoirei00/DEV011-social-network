@@ -6,14 +6,13 @@ function home(navigateTo) {
     const image = document.createElement('img');
   
     image.src = './img-sn/festilogo1.png';
-    title.textContent = 'Welcome to my project';
    
     button.textContent = 'login';
     button.addEventListener('click', () => {
         navigateTo('/login');
       });
 
-    
+    title.textContent = 'Welcome to my project';
   
     section.append(image, title, button);
     return section;

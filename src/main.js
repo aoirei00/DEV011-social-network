@@ -3,10 +3,10 @@
 //import { myFunction } from './lib/index.js';
 
 // file main.js
-import home from './lib/home';
-import login from './lib/login.js';
-import error from './lib/error.js';
-import wall from './lib/wall.js';
+import home from './views/home';
+import login from './views/login.js';
+import error from './views/error.js';
+import wall from './views/wall.js';
 
 
 const routes = [
