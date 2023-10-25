@@ -7,7 +7,7 @@
 
 /* home screen view */
 body {
-    /* background-image: url(img-sn/fondo-corto.png); */
+    /* background-image: url(); */
     background-color: #2D2D2D;
     background-attachment: fixed;
     background-size: cover;
@@ -15,6 +15,7 @@ body {
 .imgho {
     width: 20%;
     margin-top: 7%;
+    margin-bottom: 10%;
 }
 .textho {
     color: cornsilk;
@@ -29,8 +30,8 @@ body {
     border-radius: 10px;
     color: white;
     margin-top: 4%;
-    margin-left: 20%;
-    margin-right: 20%;
+    margin-left: 5%;
+    margin-right: 5%;
 }
 
 /* home mobile view */
@@ -52,13 +53,24 @@ body {
     }
     .buttonho {
         background: linear-gradient(to bottom, #DB00FF, #7204FE);
-        padding: 3% 6% 3% 6%;
+        height: max-content;
+        padding: 3% 10% 3% 10%;
         border: none;
         border-radius: 10px;
         color: white;
         margin-top: 15%;
-        margin-left: 20%;
-        margin-right: 20%;
+        margin-left: 8%;
+        margin-right: 8%;
+    }
+    .otherOption {
+        margin-top: 10%;
+        color: cornsilk;
+        font-size: smaller;
+    }
+    .googlelog {
+       background-image: url('../../img-sn/google.png');
+       margin-top: 8%;
+       border-radius: 500px;
     }
 }
 
@@ -66,13 +78,13 @@ body {
 
 
 /* register */
-body, html {
+/* body, html {
     height: 100%;
   }
   body {
     margin: 0;
     padding: 0;
-    background-image: url('./img-sn/fondo-corto.png'); /* Reemplaza 'ruta_de_tu_imagen.jpg' con la ruta real de tu imagen */
-    background-size: cover; /* Esto hace que la imagen cubra todo el fondo */
-    background-repeat: no-repeat; /* Esto evita que se repita si la imagen es pequeña */
-  }
+    background-image: url('./img-sn/fondo-corto.png'); /* Reemplaza 'ruta_de_tu_imagen.jpg' con la ruta real de tu imagen 
+    background-size: cover; /* Esto hace que la imagen cubra todo el fondo 
+    background-repeat: no-repeat; /* Esto evita que se repita si la imagen es pequeña
+  } */
