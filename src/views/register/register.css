@@ -1,0 +1,112 @@
+.container-register {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    /* background-color: #2D2D2D;  */
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}
+
+.container {
+    width: 50%;
+    height: auto;
+    padding: 5px;
+    margin: auto;
+    display: flex;
+    /* flex-direction: row; */
+    /* background-color: #2D2D2D; */
+    /* align-content: space-around;
+    align-items: center;
+    justify-content: center; */
+}
+
+.container-left {
+    width: 500px;
+    height: 556px;
+    background-color: #333333;
+    background-image: url('../../img-sn/left-register.png');
+    background-size: cover; /* Esto hace que la imagen cubra todo el fondo */
+    background-repeat: no-repeat; /* Esto evita que se repita si la imagen es pequeña */
+
+}
+
+.container-right {
+    width: 500px;
+    height: 556px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #2A2A2A;
+}
+
+.head-register{
+
+    display: flex;
+    align-items: center;
+
+}   
+.btn-back-home{
+ position: absolute;
+    left: 1024px; 
+     
+}
+
+.title-register{
+    padding-top: 1rem;
+}
+
+
+.title-register h2 {
+    color: #FFF;
+    font-family: Inter;
+    font-size: 27px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: capitalize;
+}
+
+.form-register {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-register input {
+    display: flex;
+    width: 225px;
+    height: 31px;
+    justify-content: flex-end;
+    align-items: center;
+    flex-shrink: 0;
+    margin-bottom: 20px;
+    border-radius: 6px;
+    border: 1px solid #FFFFFFD9;
+}
+
+.form-register label {
+    color: #FFF;
+    text-align: left;
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    text-transform: capitalize;
+    margin-bottom: 5px;
+}
+
+.form-register button {
+    width: 231px;
+    height: 37px;
+    border-radius: 6px;
+    background: #C4C4C4;
+    color: #FFF;
+    font-family: Inter;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    text-transform: capitalize;
+    border: none;
+}

@@ -1,28 +1,26 @@
 // Este es el punto de entrada de tu aplicacion
 
-//import { myFunction } from './lib/index.js';
+// import { myFunction } from './lib/index.js';
 
 // file main.js
 import home from './lib/home';
-import login from './lib/login.js';
+import login from './login.js';
 import error from './lib/error.js';
-
+import register from './views/register/register.js';
 
 const routes = [
-    { path: '/', component: home },
-    { path: '/login', component: login },
-    { path: '/error', component: error },
+  { path: '/', component: home },
+  { path: '/login', component: login },
+  { path: '/register', component: register },
+  { path: '/error', component: error },
 ];
-
-
-
 
 const defaultRoute = '/';
 const root = document.getElementById('root');
 
 function navigateTo(hash) {
   const route = routes.find((routeFound) => routeFound.path === hash);
-  
+
   if (route && route.component) {
     window.history.pushState(
       {},
@@ -34,7 +32,7 @@ function navigateTo(hash) {
       root.removeChild(root.firstChild);
     }
     root.appendChild(route.component(navigateTo));
-   } else {
+  } else {
     navigateTo('/error');
   }
 }
@@ -45,4 +43,4 @@ window.onpopstate = () => {
 
 navigateTo(window.location.pathname || defaultRoute);
 
-//myFunction();
+// myFunction();
