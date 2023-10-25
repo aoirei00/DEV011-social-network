@@ -1,6 +1,7 @@
 * {
     margin: 0%;
 }
+
 /* home screen view */
 body {
     background-image: url(img-sn/fondo-corto.png);
@@ -29,11 +30,7 @@ body {
     margin-right: 20%;
 }
 
-/* home */
-/* .sectionho {
-    background-image: url("../../src/img-sn/Diseño_sin_título-removebg.png");
-} */
-
+/* home mobile view */
 @media (max-width: 800px) {
     body {
         background-image: none;
