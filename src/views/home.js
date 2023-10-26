@@ -10,7 +10,7 @@ function home(navigateTo) {
   const image = document.createElement('img');
   image.classList.add('imgho');
   const buttonStart = document.createElement('button');
-  buttonStart.classList.add('buttondesg');
+  buttonStart.classList.add('buttonStart');
   image.src = './img-sn/festilogo1.png';
   title.textContent = 'Welcome to Festigram, the largest community of concerts and festivals around the world!';
 

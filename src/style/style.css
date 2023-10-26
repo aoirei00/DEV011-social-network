@@ -42,7 +42,7 @@ body {
    margin-top: 2%;
    border-radius: 500px;
 }
-/* .buttonStart {
+.buttonStart {
     background: linear-gradient(to bottom, #DB00FF, #7204FE);
     height: max-content;
     padding: 1% 3% 1% 3%;
@@ -52,7 +52,7 @@ body {
     margin-top: 5%;
     margin-left: 8%;
     margin-right: 8%;
-} */
+}
 
 /* home mobile view */
 @media (max-width: 400px) {
@@ -83,7 +83,7 @@ body {
         margin-left: 8%;
         margin-right: 8%;
     }
-    /* .buttonStart {
+    .buttonStart {
         background: linear-gradient(to bottom, #DB00FF, #7204FE);
         height: max-content;
         padding: 3% 10% 3% 10%;
@@ -93,7 +93,7 @@ body {
         margin-top: 15%;
         margin-left: 8%;
         margin-right: 8%;
-    } */
+    }
 }
 
 /* login
