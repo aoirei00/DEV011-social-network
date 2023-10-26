@@ -1,4 +1,5 @@
 @import './register.css';
+@import './logInFake.css';
 @import url('https://fonts.googleapis.com/css2?family=Inter');
 
 * {
@@ -38,13 +39,23 @@ body {
     font-size: smaller;
 }
 .googlelog {
-   background-image: url('../../img-sn/google.png');
    margin-top: 2%;
    border-radius: 500px;
 }
+/* .buttonStart {
+    background: linear-gradient(to bottom, #DB00FF, #7204FE);
+    height: max-content;
+    padding: 1% 3% 1% 3%;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    margin-top: 5%;
+    margin-left: 8%;
+    margin-right: 8%;
+} */
 
 /* home mobile view */
-@media (max-width: 800px) {
+@media (max-width: 400px) {
     body {
         background-image: none;
         background-color: #2D2D2D;
@@ -72,20 +83,49 @@ body {
         margin-left: 8%;
         margin-right: 8%;
     }
-    .otherOption {
-        margin-top: 10%;
-        color: cornsilk;
-        font-size: smaller;
-    }
-    .googlelog {
-       background-image: url('../../img-sn/google.png');
-       margin-top: 8%;
-       border-radius: 500px;
-    }
+    /* .buttonStart {
+        background: linear-gradient(to bottom, #DB00FF, #7204FE);
+        height: max-content;
+        padding: 3% 10% 3% 10%;
+        border: none;
+        border-radius: 10px;
+        color: white;
+        margin-top: 15%;
+        margin-left: 8%;
+        margin-right: 8%;
+    } */
 }
 
-/* login */
-
+/* login
+.textlo {
+    font-size: larger;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: white;
+    text-align: center;
+    margin-top: 10%;
+}
+.formlo {
+    display: flex;
+    justify-content: center;
+    padding: 0% 30% 0% 30%;
+} */
+/* login
+@media (max-width: 400px) {
+    .textlo {
+        font-size: larger;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        color: white;
+        text-align: center;
+        margin-top: 60%;
+    }
+    .formlo {
+        padding: 0% 20% 0% 20%;
+    }
+    .inputlo {
+        padding: 2% 5% 2% 5%;
+        margin: 2% 5% 2% 5%;
+    } 
+} */
 
 /* register */
 /* body, html {

@@ -8,14 +8,16 @@ import login from './views/login.js';
 import error from './views/error.js';
 import wall from './views/wall.js';
 import register from './views/register.js';
+import loginfake from './views/loginfake.js';
 
 
 const routes = [
-    { path: '/', component: home },
-    { path: '/login', component: login },
-    { path: '/error', component: error },
-    { path: '/wall', component: wall },
-    { path: '/register', component: register },
+  { path: '/', component: home },
+  { path: '/login', component: login },
+  { path: '/error', component: error },
+  { path: '/wall', component: wall },
+  { path: '/register', component: register },
+  { path: '/loginfake', component: loginfake },
 ];
 
 
@@ -26,7 +28,7 @@ const root = document.getElementById('root');
 
 function navigateTo(hash) {
   const route = routes.find((routeFound) => routeFound.path === hash);
-  
+
   if (route && route.component) {
     window.history.pushState(
       {},
@@ -38,7 +40,7 @@ function navigateTo(hash) {
       root.removeChild(root.firstChild);
     }
     root.appendChild(route.component(navigateTo));
-   } else {
+  } else {
     navigateTo('/error');
   }
 }

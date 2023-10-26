@@ -20,8 +20,8 @@ function register(navigateTo) {
         </div>
       
               <form class='form-register'>
-                <label for="emailAdress">Email adress</label>
-                  <input type="text" id="emailAdress" />
+                <label for="emailAddress">Email address</label>
+                  <input type="text" id="emailAddress" />
 
                 <label for="fullName">Name</label>
                   <input type="text" id="name" />
@@ -32,7 +32,7 @@ function register(navigateTo) {
                 <label for="confirm password">Confirm Password</label>
                   <input type="text" id="confirmPassword" />
 
-                <button>Create count</button>
+                <button class= 'buttondesg' >Create count</button>
             </form>
 
 
