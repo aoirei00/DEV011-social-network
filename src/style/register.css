@@ -23,7 +23,7 @@
 
 .container-left {
     width: 500px;
-    height: 556px;
+    height: 560px;
     background-color: #333333;
     background-image: url('../../img-sn/left-register.png');
     background-size: cover; /* Esto hace que la imagen cubra todo el fondo */
@@ -33,7 +33,7 @@
 
 .container-right {
     width: 500px;
-    height: 556px;
+    height: 560px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -44,11 +44,15 @@
 
     display: flex;
     align-items: center;
+    margin-right: 158px;
 
 }   
 .btn-back-home{
- position: absolute;
-    left: 1024px; 
+ /* position: absolute;
+    left: 1024px;  */
+    display: flex;
+    align-items: center;
+    margin-right: 130px;
      
 }
 
@@ -61,6 +65,8 @@
     color: #FFF;
     font-family: Inter;
     font-size: 27px;
+    margin-bottom: 46px;
+    margin-top: 24px;
     font-style: normal;
     font-weight: 700;
     line-height: normal;
@@ -74,8 +80,8 @@
 
 .form-register input {
     display: flex;
-    width: 225px;
-    height: 31px;
+    width: 252px;
+    height: 36px;
     justify-content: flex-end;
     align-items: center;
     flex-shrink: 0;
@@ -97,10 +103,11 @@
 }
 
 .form-register button {
-    width: 231px;
-    height: 37px;
+    width: 257px;
+    height: 42px;
+    margin-top: 15px;
     border-radius: 6px;
-    background: #C4C4C4;
+    background: linear-gradient(to bottom, #DB00FF, #7204FE);
     color: #FFF;
     font-family: Inter;
     font-size: 15px;
@@ -109,4 +116,27 @@
     line-height: normal;
     text-transform: capitalize;
     border: none;
+}
+
+@media screen and (min-width: 360px) and (max-width: 767px) {
+    .container-left {
+        display: none;
+    }
+
+    .container-right {
+        width: auto;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;    
+        background: none; 
+    }
+
+    .btn-back-home{
+        position: absolute;
+           left: 14px; 
+           display: none;
+            
+       }
+ 
 }
