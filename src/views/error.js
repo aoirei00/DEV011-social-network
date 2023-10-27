@@ -4,5 +4,5 @@ function error() {
   title.textContent = 'Error 404 page no found, please go home';
   return title;
 }
-
 export default error;
+

@@ -1,6 +1,4 @@
 @import './register.css';
-@import './logInFake.css';
-@import './profile.css';
 @import url('https://fonts.googleapis.com/css2?family=Inter');
 
 * {
@@ -13,6 +11,8 @@ body {
     background-color: #2D2D2D;
     background-attachment: fixed;
     background-size: cover;
+    /* background-image: url('../img-sn/background-1.png'); */
+
 }
 .imgho {
     width: 20%;

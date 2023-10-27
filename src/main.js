@@ -1,6 +1,6 @@
 // Este es el punto de entrada de tu aplicacion
 
-//import { myFunction } from './lib/index.js';
+// import { myFunction } from './lib/index.js';
 
 // file main.js
 import home from './views/home';
@@ -8,10 +8,6 @@ import login from './views/login.js';
 import error from './views/error.js';
 import wall from './views/wall.js';
 import register from './views/register.js';
-import loginfake from './views/loginfake.js';
-import profile from './views/profile.js';
-import edit from './views/edit.js';
-
 
 const routes = [
   { path: '/', component: home },
@@ -19,13 +15,7 @@ const routes = [
   { path: '/error', component: error },
   { path: '/wall', component: wall },
   { path: '/register', component: register },
-  { path: '/loginfake', component: loginfake },
-  { path: '/profile', component: profile },
-  { path: '/edit', component: edit },
 ];
-
-
-
 
 const defaultRoute = '/';
 const root = document.getElementById('root');
@@ -55,4 +45,4 @@ window.onpopstate = () => {
 
 navigateTo(window.location.pathname || defaultRoute);
 
-//myFunction();
+// myFunction();
