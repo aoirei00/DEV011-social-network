@@ -31,8 +31,8 @@ function register(navigateTo) {
         </div>
       
               <form class='form-register'>
-                <label for="emailAdress">Email adress</label>
-                  <input type="text" id="emailAdress" />
+                <label for="emailAddress">Email address</label>
+                  <input type="text" id="emailAddress" />
 
                 <label for="fullName">Name</label>
                   <input type="text" id="name" />
@@ -42,15 +42,12 @@ function register(navigateTo) {
 
                 <label for="confirm password">Confirm Password</label>
                   <input type="password" id="confirmPassword" />
+                  
+                <button id="registerButton">Create Account</button>
 
-                <button id="registerButton">Create count</button>
             </form>
-
-
         </div>
-
     </div>
-
   </div>
 `;
   const registerButton = containerReg.querySelector('#registerButton');

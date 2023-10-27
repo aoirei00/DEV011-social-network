@@ -15,9 +15,10 @@ function login(navigateTo) {
   const inputPass = document.createElement('input');
   inputPass.classList.add('inputlo');
   const buttonLogin = document.createElement('button');
-  buttonLogin.classList.add('buttonlo');
+
+  buttonLogin.classList.add('buttondesg');
   const buttonRegister = document.createElement('button');
-  buttonRegister.classList.add('buttonlo');
+  buttonRegister.classList.add('buttondesg');
   const buttonGoogle = document.createElement('button');
   buttonGoogle.classList.add('googlelog');
 
@@ -39,7 +40,6 @@ function login(navigateTo) {
         const user = result.user;
         console.log('Usuario autenticado con éxito:', user);
         history.pushState(null, null, '/wall');
-
         //  llama a la función de navegación para cargar la vista "wall"
         navigateTo('/wall');
       })
