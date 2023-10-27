@@ -1,47 +1,56 @@
 /*login fake*/
-@media (max-width: 800px) {
-    body {
-        background-size: cover;
-        background-repeat: no-repeat;
-        margin: 0% 15% 0% 15%;
-    }
+@media (max-width: 400px) {
+    /* body {
+        /* background-size: cover;
+        background-repeat: no-repeat; */
+        /* margin: 0% 0% 0% 0%;
+    } */
     .logIn {
-        padding: 40% 0% 15% 0%;
+        padding: 30% 0% 8% 0%;
         text-align: center;
-        align-items: center;
         color: white;
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         font-size: 200%;
     }
     .inputLog {
-        padding: 3% 9% 2% 8%;
-        margin: 8% 8% 5% 8%;
+        padding: 3% 9% 3% 9%;
+        margin: 3% 20% 2% 20%;
         border-radius: 10px;
+        font-size: medium;
         border: none;
     }
     .nameslabel {
         color: white;
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        margin: 8% 10% 0% 10%;
+        margin: 6% 10% 0% 20%;
         font-weight: bold;
     }
-    #createAcc {
+    .buttonLog {
         background: linear-gradient(to bottom, #DB00FF, #7204FE);
         height: max-content;
-        padding: 3% 10% 3% 10%;
+        padding: 3% 11% 3% 11%;
         border: none;
         border-radius: 10px;
         color: white;
-        margin: 12% 23% 10% 23%;
+        margin: 3% 0% 4% 38%;
     }
-    .buttondesg {
+    .buttonReg {
         background: linear-gradient(to bottom, #DB00FF, #7204FE);
         height: max-content;
-        padding: 3% 10% 3% 10%;
+        padding: 3% 11% 3% 11%;
         border: none;
         border-radius: 10px;
         color: white;
-        margin: 5% 1.5% 0% 1.5%;
+        margin: 5% 2% 0% 15%;
+    }
+    .buttonRet {
+        background: linear-gradient(to bottom, #DB00FF, #7204FE);
+        height: max-content;
+        padding: 3% 11% 3% 11%;
+        border: none;
+        border-radius: 10px;
+        color: white;
+        margin: 5% 15% 0% 1%;
     }
     .otherOption {
         margin: 0% 0% 5% 0%;

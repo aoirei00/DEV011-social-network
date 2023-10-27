@@ -1,5 +1,6 @@
 @import './register.css';
 @import './logInFake.css';
+@import './profile.css';
 @import url('https://fonts.googleapis.com/css2?family=Inter');
 
 * {
@@ -138,3 +139,22 @@ body {
     background-size: cover; /* Esto hace que la imagen cubra todo el fondo 
     background-repeat: no-repeat; /* Esto evita que se repita si la imagen es pequeña
   } */
+
+/* profile.css
+@media (max-width: 400px) {
+    .headerpro {
+      width: 300%;
+      height: 300%;
+    }
+    .buttonStart {
+      background: linear-gradient(to bottom, #DB00FF, #7204FE);
+      height: max-content;
+      padding: 3% 10% 3% 10%;
+      border: none;
+      border-radius: 10px;
+      color: white;
+      margin-top: 15%;
+      margin-left: 8%;
+      margin-right: 8%;
+    }
+} */

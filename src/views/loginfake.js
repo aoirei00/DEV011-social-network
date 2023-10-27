@@ -8,23 +8,23 @@ function loginfake(navigateTo) {
        <main >
          <h2 class= 'logIn'>Log In</h2>
         <form class = 'formLogIn'> 
-          <label class= 'nameslabel' for="emailAddress">Email adress</label>
-            <input class='inputLog' type="text" id="emailAdress" placeholder='Email Address'/>
+          <label class= 'nameslabel' for="emailAddress">Email address</label>
+            <input class='inputLog' type="text" id="emailAddress" placeholder='Email Address'/>
 
           <label class= 'nameslabel' for="password">Password</label>
             <input class='inputLog' type="text" id="password" placeholder='Password'/>
 
           <label class= 'nameslabel' for="confirmPassword">Confirm Password</label>
             <input class='inputLog' type="text" id="confirmPassword" placeholder='Confirm Password'/>
-
-          <button id='createAcc'>Create Account</button>
         </form>
        </main>
        `
+    const buttonLogIn = document.createElement('button');
+    buttonLogIn.classList.add('buttonLog');   
     const buttonRegister = document.createElement('button');
-    buttonRegister.classList.add('buttondesg');
+    buttonRegister.classList.add('buttonReg');
     const buttonReturn = document.createElement('button');
-    buttonReturn.classList.add('buttondesg');
+    buttonReturn.classList.add('buttonRet');
     const other = document.createElement('section');
     other.classList.add('otherOption');
 
@@ -60,18 +60,23 @@ function loginfake(navigateTo) {
         });
     });
 
+    buttonLogIn.textContent = 'Log In';
+    buttonLogIn.addEventListener('click', () => {
+      navigateTo('/profile');
+    })
+
     buttonRegister.textContent = 'Register';
     buttonRegister.addEventListener('click', () => {
         navigateTo('/register');
     });
 
-    buttonReturn.textContent = 'Return to home';
+    buttonReturn.textContent = 'Return';
     buttonReturn.addEventListener('click', () => {
         navigateTo('/');
     });
     
     buttonGoogle.appendChild(imageGoogle);
-    containerLog.append( other, buttonGoogle, buttonRegister, buttonReturn);
+    containerLog.append(buttonLogIn, other, buttonGoogle, buttonRegister, buttonReturn);
     return containerLog;
 }
 export default loginfake;

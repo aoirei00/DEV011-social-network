@@ -9,6 +9,8 @@ import error from './views/error.js';
 import wall from './views/wall.js';
 import register from './views/register.js';
 import loginfake from './views/loginfake.js';
+import profile from './views/profile.js';
+import edit from './views/edit.js';
 
 
 const routes = [
@@ -18,6 +20,8 @@ const routes = [
   { path: '/wall', component: wall },
   { path: '/register', component: register },
   { path: '/loginfake', component: loginfake },
+  { path: '/profile', component: profile },
+  { path: '/edit', component: edit },
 ];
 
 
