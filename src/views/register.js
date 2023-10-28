@@ -1,16 +1,12 @@
-import {
-  getAuth,
-  createUserWithEmailAndPassword,
-  updateProfile,
-} from 'firebase/auth';
-import head from './wall/head';
+import {getAuth, createUserWithEmailAndPassword, updateProfile} from 'firebase/auth';
+// import head from './wall/head';
 
 function register(navigateTo) {
-  const headComponents = head('aqui');
+  // const headComponents = head('aqui');
 
   const containerReg = document.createElement('section');
-  const btnMuro = document.createElement('button');
-  btnMuro.classList.add('buttonho');
+  // const btnMuro = document.createElement('button');
+  // btnMuro.classList.add('buttonho');
 
   containerReg.classList.add('container-register');
   containerReg.innerHTML = `
@@ -110,12 +106,13 @@ function register(navigateTo) {
         console.error('Error de registro:', errorCode, errorMessage);
       });
   });
-  btnMuro.textContent = 'Crear cuenta';
-  btnMuro.addEventListener('click', () => {
-    navigateTo('/muro');
-  });
+  // btnMuro.textContent = 'Crear cuenta';
+  // btnMuro.addEventListener('click', () => {
+  //   navigateTo('/muro');
+  // });
 
-  containerReg.append(headComponents, btnMuro);
+  // containerReg.append(headComponents, btnMuro);
+containerReg.append();
   return containerReg;
 }
 
