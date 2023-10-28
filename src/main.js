@@ -8,6 +8,9 @@ import login from './views/login.js';
 import error from './views/error.js';
 import muro from './views/wall/index.js';
 import register from './views/register.js';
+import loginfake from './views/loginfake.js';
+import profile from './views/profile.js';
+import edit from './views/edit.js';
 
 const routes = [
   { path: '/', component: home },
@@ -15,6 +18,9 @@ const routes = [
   { path: '/error', component: error },
   { path: '/muro', component: muro },
   { path: '/register', component: register },
+  { path: '/loginfake', component: loginfake },
+  { path: '/profile', component: profile },
+  { path: '/edit', component: edit },
 ];
 
 const defaultRoute = '/';
