@@ -1,6 +1,7 @@
 @import './register.css';
 @import './logInFake.css';
 @import './profile.css';
+@import '/views/wall/wall.css';
 @import url('https://fonts.googleapis.com/css2?family=Inter');
 
 * {

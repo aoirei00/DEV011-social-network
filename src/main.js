@@ -6,7 +6,7 @@
 import home from './views/home';
 import login from './views/login.js';
 import error from './views/error.js';
-import wall from './views/wall.js';
+import muro from './views/wall/index.js';
 import register from './views/register.js';
 import loginfake from './views/loginfake.js';
 import profile from './views/profile.js';
@@ -17,7 +17,7 @@ const routes = [
   { path: '/', component: home },
   { path: '/login', component: login },
   { path: '/error', component: error },
-  { path: '/wall', component: wall },
+  { path: '/muro', component: muro },
   { path: '/register', component: register },
   { path: '/loginfake', component: loginfake },
   { path: '/profile', component: profile },

@@ -50,7 +50,7 @@ function profile(navigateTo) {
         navigateTo('/edit');
     });
 
-    buttonExit.textContent = 'Exit';
+    buttonExit.textContent = 'Log Out';
     buttonExit.addEventListener('click', () => {
         navigateTo('/');
     });

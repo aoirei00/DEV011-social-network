@@ -13,9 +13,6 @@ function loginfake(navigateTo) {
 
           <label class= 'nameslabel' for="password">Password</label>
             <input class='inputLog' type="text" id="password" placeholder='Password'/>
-
-          <label class= 'nameslabel' for="confirmPassword">Confirm Password</label>
-            <input class='inputLog' type="text" id="confirmPassword" placeholder='Confirm Password'/>
         </form>
        </main>
        `
