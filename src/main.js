@@ -3,18 +3,20 @@
 //import { myFunction } from './lib/index.js';
 
 // file main.js
-import home from './lib/home';
-import login from './lib/login.js';
-import error from './lib/error.js';
-import wall from './lib/wall.js';
+import home from './views/home';
+import login from './views/login.js';
+import error from './views/error.js';
+import muro from './views/wall/index.js';
+import register from './views/register.js';
 
 
 const routes = [
     { path: '/', component: home },
     { path: '/login', component: login },
     { path: '/error', component: error },
-    { path: '/wall', component: wall },
     { path: '/register', component: register },
+    { path: '/muro', component: muro },
+    
 ];
 
 
@@ -47,5 +49,3 @@ window.onpopstate = () => {
 };
 
 navigateTo(window.location.pathname || defaultRoute);
-
-//myFunction();
