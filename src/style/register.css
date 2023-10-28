@@ -67,11 +67,11 @@
     line-height: normal;
     text-transform: capitalize;
 }
-.form-register {
+.formLogIn {
     display: flex;
     flex-direction: column;
 }
-.form-register input {
+.formLogIn input {
     display: flex;
     width: 252px;
     height: 36px;
@@ -82,7 +82,7 @@
     border-radius: 6px;
     border: 1px solid #FFFFFFD9;
 }
-.form-register label {
+.formLogIn label {
     color: #FFF;
     text-align: left;
     font-family: Inter;
@@ -93,7 +93,7 @@
     text-transform: capitalize;
     margin-bottom: 5px;
 }
-.form-register button {
+.formLogIn button {
     width: 257px;
     height: 42px;
     margin-top: 15px;
