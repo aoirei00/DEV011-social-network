@@ -9,7 +9,7 @@ function register(navigateTo) {
       <div class='container-right'>
         <div class='head-register'>
           <div class='btn-back-home'>
-            <a href='/'> 
+            <a href='/login'> 
               <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 35 35" fill="none">
                 <circle cx="17.5" cy="17.5" r="16" stroke="white" stroke-width="3" />
                 <path d="M20 10L11 17.5L20 25" stroke="white" stroke-width="3" stroke-linecap="round" />
