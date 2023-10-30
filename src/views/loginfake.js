@@ -36,14 +36,12 @@ function loginfake(navigateTo) {
 
                 <section>
                   <h6> You can access with your Google Account </h6>
-                  <button id="buttonGoogle">
-                  <img src = '../img-sn/google_icon.svg' class='imgGoogle' alt='Google png'/>
-                  </button>
+                  <button id="buttonGoogle"></button>
                 </section>
 
                 <h6> or </h6>
                 <button id="registerButton">Create an Account</button>
-
+                <button id="returnButton">Return</button>
             </form>
         </dt>
     </dl>
@@ -53,7 +51,13 @@ function loginfake(navigateTo) {
 const googleButton = containerLog.querySelector('#buttonGoogle');
 const logInButton = containerLog.querySelector('#logInButton');
 const buttonRegister = containerLog.querySelector('#registerButton');
-// const buttonReturn = containerLog.querySelector('#returnButton');
+const buttonReturn = containerLog.querySelector('#returnButton');
+
+const imageGoogle = document.createElement('img');
+imageGoogle.classList.add('imgGoogle');
+
+imageGoogle.src = '../../img-sn/google.png';
+imageGoogle.alt = 'Google png';
 
 googleButton.addEventListener('click', () => {
     const auth = getAuth();
@@ -63,10 +67,10 @@ googleButton.addEventListener('click', () => {
     signInWithPopup(auth, provider).then((result) => { // El usuario ha iniciado sesión con éxito con Google
         const user = result.user;
         console.log('Usuario autenticado con éxito:', user);
-        history.pushState(null, null, '/wall');
+        history.pushState(null, null, '/muro');
 
         // llama a la función de navegación para cargar la vista "wall"
-        navigateTo('/wall');
+        navigateTo('/muro');
     }).catch((error) => { // Handle Errors here
         const errorCode = error.code;
         const errorMessage = error.message;
@@ -82,12 +86,13 @@ buttonRegister.addEventListener('click', () => {
     navigateTo('/register');
 });
 
-// buttonReturn.addEventListener('click', () => {
-//     navigateTo('/');
-// });
+buttonReturn.addEventListener('click', () => {
+    navigateTo('/');
+});
 
+  googleButton.appendChild(imageGoogle);
   containerLog.append();
-  return containerLog;
+  return googleButton, containerLog;
 }
 
 export default loginfake;
