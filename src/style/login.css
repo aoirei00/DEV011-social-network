@@ -1,0 +1,183 @@
+.containerLog {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}
+.logIn {
+    color: #FFF;
+    font-family: Inter;
+    font-size: 25px;
+    margin-bottom: 46px;
+    margin-top: 40px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: capitalize;
+}
+.formLogIn {
+    display: flex;
+    flex-direction: column;
+}
+.emailLog {
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 6% 40% 2% 0%;
+    font-weight: bold;
+    display: flex;
+    justify-content: flex-start;
+}
+.passwordLog {
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 6% 45% 2% 0%;
+    font-weight: bold;
+    display: flex;
+    justify-content: flex-start;
+}
+.formLogIn input {
+    display: flex;
+    width: 252px;
+    height: 32px;
+    justify-content: flex-end;
+    align-items: center;
+    flex-shrink: 0;
+    margin-bottom: 20px;
+    border-radius: 6px;
+    border: 1px solid #FFFFFFD9;
+}
+.linkToResetPassword a {
+    color: white;
+    font-family: Inter;
+    font-size: small;
+    justify-content: flex-end;
+    align-items: center;
+}
+.buttonLog {
+    width: 257px;
+    height: 38px;
+    margin-top: 15px;
+    border-radius: 6px;
+    background: linear-gradient(to bottom, #DB00FF, #7204FE);
+    color: #FFF;
+    font-family: Inter;
+    font-size: 15px;
+    font-style: normal;
+    line-height: normal;
+    border: none;
+}
+.otherOption {
+    margin: 0% 0% 0% 0%;
+    color: cornsilk;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.googlelog {
+
+    width: 36px;
+    height: 36px;
+    background-color: white;
+    border: none;
+    padding: 0%;
+ }
+.imgGoogle {
+    margin-top: 3px;
+    width: 30px;
+    height: 30px;
+}
+.buttons {
+    display: inline-flex;
+}
+.buttonReg {
+    width: 125px;
+    height: 32px;
+    margin-top: 15px;
+    margin-right: 3%;
+    border-radius: 6px;
+    background: linear-gradient(to bottom, #DB00FF, #7204FE);
+    color: #FFF;
+    font-family: Inter;
+    font-size: 15px;
+    font-style: normal;
+    line-height: normal;
+    border: none;
+}
+.buttonRet {
+    width: 125px;
+    height: 32px;
+    margin-top: 15px;
+    border-radius: 6px;
+    background: linear-gradient(to bottom, #DB00FF, #7204FE);
+    color: #FFF;
+    font-family: Inter;
+    font-size: 15px;
+    font-style: normal;
+    line-height: normal;
+    border: none;
+}
+@media(max-width: 800px) {
+    body {
+        display: block;
+        justify-content: center;
+    }
+    .containerLog {
+        /* display: flex;
+            justify-content: center; 
+            align-items: center;
+            height: 100vh;
+        } */
+        display: flex;
+        width: auto;
+        height: auto;
+        justify-content: center;
+        justify-items: center;
+        align-content: center;
+        align-items: center;
+    }
+    .formLogIn {
+        display: flex;
+        flex-direction: column;
+    }
+    .googlelog {
+        margin: 0% 43% 8% 43%;
+        width: 36px;
+        height: 36px;
+        background-color: white;
+        border: none;
+        padding: 0%;
+     }
+    .formLogIn button {
+        width: 257px;
+        height: 42px;
+        margin-top: 15px;
+        border-radius: 6px;
+        background: linear-gradient(to bottom, #DB00FF, #7204FE);
+        color: #FFF;
+        font-family: Inter;
+        font-size: 15px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+        text-transform: capitalize;
+        border: none;
+    }
+    .buttonReg {
+        background: linear-gradient(to bottom, #DB00FF, #7204FE);
+        width: 127px;
+        height: 36px;
+        border: none;
+        border-radius: 10px;
+        color: white;
+    }
+    .buttonRet {
+        background: linear-gradient(to bottom, #DB00FF, #7204FE);
+        width: 127px;
+        height: 36px;
+        border: none;
+        border-radius: 10px;
+        color: white;
+    }
+}

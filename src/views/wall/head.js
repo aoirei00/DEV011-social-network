@@ -1,5 +1,4 @@
-function head(name) {
-    console.log("head");
+function head() {
   const sectionHead = document.createElement('section');
   const containerHead = document.createElement('div');
   const line = document.createElement('div');
@@ -13,7 +12,7 @@ function head(name) {
   btnSignUpWall.classList.add('btnSignUp-wall');
 
   imgLogoWall.src = './img-sn/festilogoLetras.svg';
-  btnSignUpWall.textContent = name;
+  btnSignUpWall.textContent = 'Sign Up';
 
   containerHead.append(imgLogoWall, btnSignUpWall);
   line.append(containerHead);
