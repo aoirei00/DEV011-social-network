@@ -1,4 +1,4 @@
-function head() {
+function head(navigateTo) {
   const sectionHead = document.createElement('section');
   const containerHead = document.createElement('div');
   const line = document.createElement('div');
@@ -12,7 +12,11 @@ function head() {
   btnSignUpWall.classList.add('btnSignUp-wall');
 
   imgLogoWall.src = './img-sn/festilogoLetras.svg';
+  
   btnSignUpWall.textContent = 'Sign Up';
+  btnSignUpWall.addEventListener('click', () => {
+    navigateTo('/');
+  });
 
   containerHead.append(imgLogoWall, btnSignUpWall);
   line.append(containerHead);
