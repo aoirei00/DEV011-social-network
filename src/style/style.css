@@ -1,4 +1,7 @@
 @import './register.css';
+@import './login.css';
+@import './profile.css';
+@import '/views/wall/wall.css';
 @import url('https://fonts.googleapis.com/css2?family=Inter');
 
 * {
@@ -11,7 +14,11 @@ body {
     background-color: #2D2D2D;
     background-attachment: fixed;
     background-size: cover;
+
     /* background-image: url('../img-sn/background-1.png'); */
+    /* background-image: url('../img-sn/bg-clear.png'); */
+    background-size: cover; /* Esto hace que la imagen cubra todo el fondo */
+    background-repeat: no-repeat; /* Esto evita que se repita si la imagen es pequeña */
 
 }
 .imgho {
@@ -97,36 +104,24 @@ body {
     }
 }
 
-/* login
-.textlo {
-    font-size: larger;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: white;
-    text-align: center;
-    margin-top: 10%;
-}
-.formlo {
-    display: flex;
-    justify-content: center;
-    padding: 0% 30% 0% 30%;
-} */
-/* login
-@media (max-width: 400px) {
-    .textlo {
-        font-size: larger;
+@media (max-width: 800px) {
+    body {
+        background-image: none;
+        background-color: #2D2D2D;
+    }
+    .imgho {
+        width: 25%;
+        margin-top: 20%;
+        margin-bottom: 10%;
+    }
+    .textho {
+        color: cornsilk;
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        color: white;
+        font-size: smaller;
         text-align: center;
-        margin-top: 60%;
+        margin: 0% 6% 0% 6%;
     }
-    .formlo {
-        padding: 0% 20% 0% 20%;
-    }
-    .inputlo {
-        padding: 2% 5% 2% 5%;
-        margin: 2% 5% 2% 5%;
-    } 
-} */
+}
 
 /* register */
 /* body, html {
@@ -139,22 +134,3 @@ body {
     background-size: cover; /* Esto hace que la imagen cubra todo el fondo 
     background-repeat: no-repeat; /* Esto evita que se repita si la imagen es pequeña
   } */
-
-/* profile.css
-@media (max-width: 400px) {
-    .headerpro {
-      width: 300%;
-      height: 300%;
-    }
-    .buttonStart {
-      background: linear-gradient(to bottom, #DB00FF, #7204FE);
-      height: max-content;
-      padding: 3% 10% 3% 10%;
-      border: none;
-      border-radius: 10px;
-      color: white;
-      margin-top: 15%;
-      margin-left: 8%;
-      margin-right: 8%;
-    }
-} */

@@ -52,10 +52,10 @@
   .buttonExit {
     position: relative;
     top: 245px;
-    margin: 2% 5% 2% 0%;
+    margin: 2% 5% 2% 0.5%;
     background: linear-gradient(to bottom, #DB00FF, #7204FE);
     height: max-content;
-    padding: 2% 19% 2% 19%;
+    padding: 2% 16% 2% 16%;
     border: none;
     border-radius: 10px;
     color: white;

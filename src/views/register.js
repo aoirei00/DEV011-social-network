@@ -1,16 +1,12 @@
-import {
-  getAuth,
-  createUserWithEmailAndPassword,
-  updateProfile,
-} from 'firebase/auth';
-import head from './wall/head';
+import {getAuth, createUserWithEmailAndPassword, updateProfile} from 'firebase/auth';
+// import head from './wall/head';
 
 function register(navigateTo) {
-  const headComponents = head('aqui');
+  // const headComponents = head('aqui');
 
   const containerReg = document.createElement('section');
-  const btnMuro = document.createElement('button');
-  btnMuro.classList.add('buttonho');
+  // const btnMuro = document.createElement('button');
+  // btnMuro.classList.add('buttonho');
 
   containerReg.classList.add('container-register');
   containerReg.innerHTML = `
@@ -20,7 +16,7 @@ function register(navigateTo) {
         <div class='container-right'>
         <div class='head-register'>
           <div class='btn-back-home'>
-              <a href='/'> <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 35 35" fill="none">
+              <a href='/login'> <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 35 35" fill="none">
                 <circle cx="17.5" cy="17.5" r="16" stroke="white" stroke-width="3" />
                 <path d="M20 10L11 17.5L20 25" stroke="white" stroke-width="3" stroke-linecap="round" />
               </svg></a>
@@ -32,7 +28,7 @@ function register(navigateTo) {
       
               <form class='form-register'>
                 <label for="emailAddress">Email address</label>
-                  <input type="text" id="emailAddress" />
+                  <input type="text" id="emailAdress" />
 
                 <label for="fullName">Name</label>
                   <input type="text" id="name" />
@@ -81,6 +77,7 @@ function register(navigateTo) {
       alert(errors.join('\n'));
       return;
     }
+
     const auth = getAuth();
     // Registra al usuario con correo electrónico y contraseña
     createUserWithEmailAndPassword(auth, email, password)
@@ -101,7 +98,7 @@ function register(navigateTo) {
           console.error('Error de actualización de perfil:', errorCode, errorMessage);
         });
         // Redirige al usuario a la página wall
-        navigateTo('/wall');
+        navigateTo('/muro');
       })
       .catch((error) => {
       // Maneja errores de registro
@@ -110,12 +107,13 @@ function register(navigateTo) {
         console.error('Error de registro:', errorCode, errorMessage);
       });
   });
-  btnMuro.textContent = 'Crear cuenta';
-  btnMuro.addEventListener('click', () => {
-    navigateTo('/muro');
-  });
+  // btnMuro.textContent = 'Crear cuenta';
+  // btnMuro.addEventListener('click', () => {
+  //   navigateTo('/muro');
+  // });
 
-  containerReg.append(headComponents, btnMuro);
+  // containerReg.append(headComponents, btnMuro);
+containerReg.append();
   return containerReg;
 }
 

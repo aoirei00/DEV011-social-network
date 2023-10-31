@@ -7,11 +7,6 @@
     align-content: center;
     align-items: center;
 }
-.btn-back-home {
-    display: flex;
-    align-items: center;
-    margin-right: 130px;
-}
 .logIn {
     color: #FFF;
     font-family: Inter;
@@ -42,6 +37,17 @@
     font-weight: bold;
     display: flex;
     justify-content: flex-start;
+}
+.formLogIn input {
+    display: flex;
+    width: 252px;
+    height: 32px;
+    justify-content: flex-end;
+    align-items: center;
+    flex-shrink: 0;
+    margin-bottom: 20px;
+    border-radius: 6px;
+    border: 1px solid #FFFFFFD9;
 }
 .linkToResetPassword a {
     color: white;
@@ -86,7 +92,7 @@
     display: inline-flex;
 }
 .buttonReg {
-    width: 220px;
+    width: 125px;
     height: 32px;
     margin-top: 15px;
     margin-right: 3%;
@@ -100,7 +106,7 @@
     border: none;
 }
 .buttonRet {
-    width: 220px;
+    width: 125px;
     height: 32px;
     margin-top: 15px;
     border-radius: 6px;
@@ -160,7 +166,7 @@
     }
     .buttonReg {
         background: linear-gradient(to bottom, #DB00FF, #7204FE);
-        width: 150px;
+        width: 127px;
         height: 36px;
         border: none;
         border-radius: 10px;
@@ -168,7 +174,7 @@
     }
     .buttonRet {
         background: linear-gradient(to bottom, #DB00FF, #7204FE);
-        width: 150px;
+        width: 127px;
         height: 36px;
         border: none;
         border-radius: 10px;

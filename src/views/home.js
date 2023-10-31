@@ -15,7 +15,7 @@ function home(navigateTo) {
   
   buttonStart.textContent = 'Get Started!';
   buttonStart.addEventListener('click', () => {
-    navigateTo('/loginfake');
+    navigateTo('/login');
   });
 
   section.append(image, title, buttonStart);
@@ -23,4 +23,3 @@ function home(navigateTo) {
 }
 
 export default home;
-  
