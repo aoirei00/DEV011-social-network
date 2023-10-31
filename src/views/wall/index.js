@@ -1,6 +1,7 @@
 import head from './head.js';
 import createPost from './createPost.js';
 import post from './post.js';
+import footer from './footer.js';
 
 function muro(navigateTo) {
   console.log('muro');
@@ -9,7 +10,8 @@ function muro(navigateTo) {
   const headComponents = head();
   const createPostComponents = createPost();
   const postComponents = post();
-  sectionWall.append(headComponents, createPostComponents, postComponents);
+  const footerComponents = footer();
+  sectionWall.append(headComponents, createPostComponents, postComponents, footerComponents);
 
   return sectionWall;
 }
