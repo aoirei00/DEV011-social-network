@@ -49,10 +49,11 @@
       width: 100%;
       height: auto;
       display: flex;
+      flex-direction: column;
    }
 
    .containerTxtArea-post {
-      width: 100%;
+      width: 90%;
       height: 90px;
       display: flex;
       background: #D9D9D9;
@@ -107,6 +108,20 @@
       margin: 3px;
       display: flex;
       border-radius: 50%;
+   }
+
+   .btnPost {
+      width: 80px;
+      height: 32px;
+      display: flex;
+      flex-direction: column;
+      border-radius: 6px;
+      margin-top: 5px;
+      margin-left: 359px;
+      border: none;
+      background: linear-gradient(to bottom, #DB00FF, #7204FE);
+      color: #FFF;
+      padding: 14px 7px 27px 26px;
    }
 
 

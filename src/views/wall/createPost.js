@@ -1,4 +1,4 @@
-function createPost() {
+export const createPost = () => {
   const containerCreatePost = document.createElement('div');
   const containerInputPost = document.createElement('div');
   const txtAreaCreatePost = document.createElement('textarea');
@@ -6,6 +6,7 @@ function createPost() {
   const circleImg = document.createElement('div');
   const imgUserCreatePost = document.createElement('img');
   const sectionPost = document.createElement('section');
+  const btnPost = document.createElement('button');
 
   containerCreatePost.classList.add('containerCreatePost');
   containerInputPost.classList.add('containerTxtArea-post');
@@ -15,13 +16,22 @@ function createPost() {
   circleImg.classList.add('circle-img');
   imgUserCreatePost.classList.add('imgUserCreate-post');
   sectionPost.classList.add('section-post');
+  btnPost.classList.add('btnPost');
 
   imgUserCreatePost.src = './img-sn/user.jpg';
+  btnPost.textContent = 'Post';
+
+  btnPost.id = 'btnPost';
 
   containerImg.append(circleImg);
   circleImg.append(imgUserCreatePost);
   containerInputPost.append(containerImg, txtAreaCreatePost);
-  containerCreatePost.append(containerInputPost);
+  containerCreatePost.append(containerInputPost, btnPost);
+  //console.log(containerCreatePost)
+
+  containerCreatePost.querySelector('#btnPost').addEventListener('click', () => {
+    console.log('funcion click');
+  });
 
   return containerCreatePost;
 }
