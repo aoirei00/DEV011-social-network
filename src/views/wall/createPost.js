@@ -20,7 +20,8 @@ export const createPost = () => {
 
   imgUserCreatePost.src = './img-sn/user.jpg';
   btnPost.textContent = 'Post';
-
+  
+  txtAreaCreatePost.id = 'inputPost';
   btnPost.id = 'btnPost';
 
   containerImg.append(circleImg);
@@ -30,7 +31,8 @@ export const createPost = () => {
   //console.log(containerCreatePost)
 
   containerCreatePost.querySelector('#btnPost').addEventListener('click', () => {
-    console.log('funcion click');
+    const contentPost = containerCreatePost.querySelector('#inputPost').value;
+    console.log('funcion click', contentPost);
   });
 
   return containerCreatePost;
