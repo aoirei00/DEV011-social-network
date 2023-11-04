@@ -1,3 +1,6 @@
+import { doc } from 'firebase/firestore';
+import { createPostFirestore } from '../../lib/index';
+
 export const createPost = () => {
   const containerCreatePost = document.createElement('div');
   const containerInputPost = document.createElement('div');
@@ -6,7 +9,7 @@ export const createPost = () => {
   const circleImg = document.createElement('div');
   const imgUserCreatePost = document.createElement('img');
   const sectionPost = document.createElement('section');
-  const btnPost = document.createElement('button');
+  const buttonPublish = document.createElement('button');
 
   containerCreatePost.classList.add('containerCreatePost');
   containerInputPost.classList.add('containerTxtArea-post');
@@ -16,25 +19,30 @@ export const createPost = () => {
   circleImg.classList.add('circle-img');
   imgUserCreatePost.classList.add('imgUserCreate-post');
   sectionPost.classList.add('section-post');
-  btnPost.classList.add('btnPost');
+  buttonPublish.classList.add('button-publish');
 
   imgUserCreatePost.src = './img-sn/user.jpg';
-  btnPost.textContent = 'Post';
-  
   txtAreaCreatePost.id = 'inputPost';
-  btnPost.id = 'btnPost';
+  buttonPublish.id = 'btnPost';
+  buttonPublish.textContent = 'Publish';
+
+  buttonPublish.addEventListener('click', () => {
+    const comment = txtAreaCreatePost.value; // Usar txtAreaCreatePost directamente
+    // console.log('Funciona el click', comment);
+    createPostFirestore(comment);
+    txtAreaCreatePost.value = '';
+  });
 
   containerImg.append(circleImg);
   circleImg.append(imgUserCreatePost);
   containerInputPost.append(containerImg, txtAreaCreatePost);
-  containerCreatePost.append(containerInputPost, btnPost);
-  //console.log(containerCreatePost)
+  containerCreatePost.append(containerInputPost, buttonPublish);
 
-  containerCreatePost.querySelector('#btnPost').addEventListener('click', () => {
-    const contentPost = containerCreatePost.querySelector('#inputPost').value;
-    console.log('funcion click', contentPost);
-  });
+  // containerCreatePost.querySelector('#btnPost').addEventListener('click', () => {
+  //   const contentPost = containerCreatePost.querySelector('#inputPost').value;
+  //   console.log('funcion click', contentPost);
+  // });
 
   return containerCreatePost;
-}
+};
 export default createPost;

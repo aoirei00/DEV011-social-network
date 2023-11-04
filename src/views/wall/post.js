@@ -1,4 +1,7 @@
-function post(navigateTo) {
+import { doc } from 'firebase/firestore';
+import { createPostFirestore, querySnapshot } from '../../lib/index';
+
+function post() {
   const containerPost = document.createElement('div');
   const headPost = document.createElement('div');
   const containerUserPost = document.createElement('div');
@@ -12,7 +15,6 @@ function post(navigateTo) {
   const like = document.createElement('button');
   const contadorLike = document.createElement('h1');
   const tituloLike = document.createElement('h1');
-
 
   containerPost.classList.add('container-post');
   headPost.classList.add('head-post');
@@ -28,11 +30,22 @@ function post(navigateTo) {
   contadorLike.classList.add('contadorLike-post');
   tituloLike.classList.add('tituloLike-post');
 
-
   imgUserHeadPost.src = './img-sn/user.jpg';
+  textAreaPost.textContent = '';
   titleNameUser.textContent = 'user01';
   contadorLike.textContent = '100';
   tituloLike.textContent = 'Me gusta';
+
+  cardPost.id = cardPost;
+  querySnapshot.then((snapshot) => {
+    snapshot.forEach((doc) => {
+      console.log(doc.id); // ID del documento
+      console.log(doc.data()); // Datos del documento
+      const post = document.createElement('input');
+      post.value = doc.data().comment;
+      cardPost.append(post);
+    });
+  });
 
   containerUserPost.append(imgUserHeadPost, titleNameUser);
   headPost.append(containerUserPost, btnOptionsPost);
