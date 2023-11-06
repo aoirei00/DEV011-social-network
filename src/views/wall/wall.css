@@ -1,9 +1,14 @@
 @media screen and (min-width: 360px) and (max-width: 767px) {
+
+   /* ///////////////////////////// Index wall //////////////////////////// */
    .section-wall {
       width: 100%;
       height: auto;
       background-color: #2D2D2D
    }
+
+
+   /* ///////////////////////////// Head wall //////////////////////////// */
 
    .container-head {
       width: 100%;
@@ -43,7 +48,7 @@
       display: flex;
    }
 
-   .containerInput-post {
+   .containerTxtArea-post {
       width: 100%;
       height: 90px;
       display: flex;
@@ -53,22 +58,212 @@
       border: none;
    }
 
-   .containerImgUser-post{
-      width: 40px;
-      height: 40px;
-      margin: 27px;
-      display: flex;
-      border-radius: 50%;
-      /* background: linear-gradient(to bottom, #DB00FF, #7204FE); */
+   input {
+      background-color: #7204FE;
+      /* display: flex;
+      flex-direction: column; */
    }
 
-   .containerImgUser-post img{
-      width: 35px;
-      height: 35px;
-      margin: 5px;
+   .txtAreaCreate-post {
+      width: 100%;
+      height: auto;
+      border-radius: 15px;
+      display: flex;
+      border: none;
+      background: transparent;
+      margin: 10px;
+      padding: 10px;
+      border-color: #CECECE;
+      border-width: 0.2px;
+      border-style: solid;
+      color: #565656;
+      text-align: justify;
+      font-size: 15px;
+      font-family: Inter;
+      font-weight: 600;
+      word-wrap: break-word;
+   }
+
+   .containerImgUser-post {
+      width: 51px;
+      height: 51px;
+      margin: 16px;
+      display: flex;
+      background: linear-gradient(to bottom, #DB00FF, #7204FE);
+      border-radius: 50%;
+   }
+
+   .circle-img {
+      width: 45px;
+      height: 45px;
+      margin: 3px;
+      display: flex;
+      background-color: #D9D9D9;
+      border-radius: 50%;
+
+   }
+
+   .containerImgUser-post img {
+      width: 39px;
+      height: 39px;
+      margin: 3px;
       display: flex;
       border-radius: 50%;
    }
+
+
+   /* ///////////////////////////// post //////////////////////////// */
+
+   .container-post {
+      width: 100%;
+      height: auto;
+      background-color: #DB00FF;
+      display: flex;
+      flex-direction: column;
+      border-radius: 15px;
+
+   }
+
+   .head-post {
+      width: 80%;
+      height: auto;
+      /* background-color: aqua; */
+      display: flex;
+      margin: 0px 35px;
+   }
+
+   .containerUser-post {
+      width: 100%;
+      height: auto;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+
+   }
+
+   .ImgUser-post {
+      width: 39px;
+      height: 39px;
+      margin: 3px;
+      display: flex;
+      border-radius: 50%;
+   }
+
+   .nameUser-post {
+      color: #FFF;
+      text-align: justify;
+      font-size: 15px;
+      font-family: Inter;
+      font-weight: 600;
+      word-wrap: break-word;
+      padding: 10px;
+   }
+
+   .btnOptions-post {
+      width: 60px;
+      height: 60px;
+      background-image: url('../../img-sn/options.svg');
+      background-size: cover;
+      border: none;
+      background-color: transparent;
+
+   }
+
+   .card-post {
+      width: auto;
+      height: 170px;
+      display: flex;
+      flex-direction: column;
+      background: #D9D9D9;
+      margin: 19px 22px;
+      border-radius: 15px;
+      border: none;
+
+   }
+
+   .txtArea-post{
+      width: 100%;
+      height: auto;
+      border-radius: 15px;
+      display: flex;
+      border: none;
+      background: transparent;
+      margin: 10px;
+      padding: 10px;
+      border-color: #CECECE;
+      border-width: 0.2px;
+      border-style: solid;
+      color: #565656;
+      text-align: justify;
+      font-size: 15px;
+      font-family: Inter;
+      font-weight: 600;
+      word-wrap: break-word;
+      
+   }
+
+   #buttonPublish {
+      background: linear-gradient(to bottom, #DB00FF, #7204FE);
+      color: #FFFF;
+      margin: 30px 10px 30px 0px;
+      border-radius: 10px;
+      border: none;
+
+   }
+
+   .like-post {
+      width: 100%;
+      height: auto;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+   }
+
+   .btnLike-post{
+      width: 30px;
+      height: 30px;
+      margin-left: 40px;
+      background-image: url('../../img-sn/like.svg');
+      background-size: cover;
+      border: none;
+      background-color: transparent;
+   }
+
+   .btnLike-post:hover{
+      width: 30px;
+      height: 30px;
+      margin-left: 40px;
+      background-image: url('../../img-sn/like1.svg');
+      background-size: cover;
+      border: none;
+      background-color: transparent;
+   }
+
+   h1 {
+      color: #FFF;
+      text-align: justify;
+      font-size: 15px;
+      font-family: Inter;
+      font-weight: 600;
+      word-wrap: break-word;
+   }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   /* ////////////////////////// footer wall /////////////////////// */
 
 
 

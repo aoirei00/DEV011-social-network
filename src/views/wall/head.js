@@ -1,21 +1,20 @@
-function head(name) {
-    console.log("head");
+function head() {
   const sectionHead = document.createElement('section');
   const containerHead = document.createElement('div');
   const line = document.createElement('div');
   const imgLogoWall = document.createElement('img');
-  const btnSignUpWall = document.createElement('button');
+  const btnLogOutWall = document.createElement('button');
 
   sectionHead.classList.add('section-head');
   containerHead.classList.add('container-head');
   line.classList.add('line-section');
   imgLogoWall.classList.add('imgLogo-wall');
-  btnSignUpWall.classList.add('btnSignUp-wall');
+  btnLogOutWall.classList.add('btnSignUp-wall');
 
   imgLogoWall.src = './img-sn/festilogoLetras.svg';
-  btnSignUpWall.textContent = name;
+  btnLogOutWall.textContent = 'Log out';
 
-  containerHead.append(imgLogoWall, btnSignUpWall);
+  containerHead.append(imgLogoWall, btnLogOutWall);
   line.append(containerHead);
   sectionHead.append(containerHead, line);
   return sectionHead;
