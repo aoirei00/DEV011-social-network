@@ -1,4 +1,4 @@
-import { doc } from 'firebase/firestore';
+// import { doc } from 'firebase/firestore';
 import { createPostFirestore } from '../../lib/index';
 
 export const createPost = () => {
@@ -28,7 +28,6 @@ export const createPost = () => {
 
   buttonPublish.addEventListener('click', () => {
     const comment = txtAreaCreatePost.value; // Usar txtAreaCreatePost directamente
-    // console.log('Funciona el click', comment);
     createPostFirestore(comment);
     txtAreaCreatePost.value = '';
   });

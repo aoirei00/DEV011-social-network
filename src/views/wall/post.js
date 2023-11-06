@@ -1,7 +1,5 @@
-import { doc } from 'firebase/firestore';
-import { createPostFirestore, querySnapshot } from '../../lib/index';
-
-function post() {
+function post(data) {
+  console.log('soy data', data);
   const containerPost = document.createElement('div');
   const headPost = document.createElement('div');
   const containerUserPost = document.createElement('div');
@@ -31,21 +29,13 @@ function post() {
   tituloLike.classList.add('tituloLike-post');
 
   imgUserHeadPost.src = './img-sn/user.jpg';
-  textAreaPost.textContent = '';
+  textAreaPost.textContent = data.comment; // aqui mandamos la informacion del input o text area
   titleNameUser.textContent = 'user01';
   contadorLike.textContent = '100';
-  tituloLike.textContent = 'Me gusta';
+  tituloLike.textContent = data.date;
 
   cardPost.id = cardPost;
-  querySnapshot.then((snapshot) => {
-    snapshot.forEach((doc) => {
-      console.log(doc.id); // ID del documento
-      console.log(doc.data()); // Datos del documento
-      const post = document.createElement('input');
-      post.value = doc.data().comment;
-      cardPost.append(post);
-    });
-  });
+  textAreaPost.id = 'textAreaPost-txt';
 
   containerUserPost.append(imgUserHeadPost, titleNameUser);
   headPost.append(containerUserPost, btnOptionsPost);
@@ -54,5 +44,4 @@ function post() {
   containerPost.append(headPost, cardPost, likePost);
   return containerPost;
 }
-
 export default post;

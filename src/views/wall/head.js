@@ -13,7 +13,7 @@ function head(navigateTo) {
 
   imgLogoWall.src = './img-sn/festilogoLetras.svg';
   
-  btnSignUpWall.textContent = 'Sign Up';
+  btnSignUpWall.textContent = 'Sign Out';
   btnSignUpWall.addEventListener('click', () => {
     navigateTo('/');
   });
