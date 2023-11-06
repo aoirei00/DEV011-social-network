@@ -1,5 +1,5 @@
 // import { doc } from 'firebase/firestore';
-import { createPostFirestore } from '../../lib/index';
+import { paintRealTime, createPostFirestore } from '../../lib/index';
 
 export const createPost = () => {
   const containerCreatePost = document.createElement('div');

@@ -1,5 +1,4 @@
 function post(data) {
-  console.log('soy data', data);
   const containerPost = document.createElement('div');
   const headPost = document.createElement('div');
   const containerUserPost = document.createElement('div');
