@@ -23,4 +23,3 @@ function home(navigateTo) {
 }
 
 export default home;
-  
