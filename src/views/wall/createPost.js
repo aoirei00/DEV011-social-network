@@ -26,6 +26,7 @@ function createPost() {
   buttonPublish.id = 'buttonPublish';
   txtAreaCreatePost.id = 'txtAreaCreatePost';
   buttonPublish.textContent = 'Publish';
+  // buttonpublish
   buttonPublish.addEventListener('click', () => {
     const comment = txtAreaCreatePost.value; // Usar txtAreaCreatePost directamente
     console.log('Funciona el click', comment);

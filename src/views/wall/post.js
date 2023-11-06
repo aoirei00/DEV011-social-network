@@ -1,6 +1,6 @@
 // archivo post.js
-import { doc } from 'firebase/firestore';
-import { createPostFirestore, querySnapshot } from '../../lib/index';
+// import { doc } from 'firebase/firestore';
+import { paintRealTime, createPostFirestore } from '../../lib/index';
 
 function post(navigateTo) {
   const containerPost = document.createElement('div');
@@ -30,15 +30,26 @@ function post(navigateTo) {
   contadorLike.classList.add('contadorLike-post');
   tituloLike.classList.add('tituloLike-post');
   cardPost.id = cardPost;
-  querySnapshot.then((snapshot) => {
-    snapshot.forEach((doc) => {
+  // pintadorealdecomentarios
+  paintRealTime((querySnapshot) => {
+    cardPost.textContent = '';
+    querySnapshot.forEach((doc) => {
       console.log(doc.id); // ID del documento
       console.log(doc.data()); // Datos del documento
-      const post = document.createElement('input');
-      post.value = doc.data().comment;
-      cardPost.append(post);
+      const posts = document.createElement('input');
+      posts.value = doc.data().comment;
+      cardPost.append(posts);
     });
   });
+  // querySnapshot.then((snapshot) => {
+  //   snapshot.forEach((doc) => {
+  //     console.log(doc.id); // ID del documento
+  //     console.log(doc.data()); // Datos del documento
+  //     const post = document.createElement('input');
+  //     post.value = doc.data().comment;
+  //     cardPost.append(post);
+  //   });
+  // });
   // next
   imgUserHeadPost.src = './img-sn/user.jpg';
   titleNameUser.textContent = 'user01';
