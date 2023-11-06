@@ -1,4 +1,5 @@
-function post(navigateTo) {
+function post(data) {
+  console.log('soy data', data);
   const containerPost = document.createElement('div');
   const headPost = document.createElement('div');
   const containerUserPost = document.createElement('div');
@@ -12,7 +13,6 @@ function post(navigateTo) {
   const like = document.createElement('button');
   const contadorLike = document.createElement('h1');
   const tituloLike = document.createElement('h1');
-
 
   containerPost.classList.add('container-post');
   headPost.classList.add('head-post');
@@ -28,11 +28,14 @@ function post(navigateTo) {
   contadorLike.classList.add('contadorLike-post');
   tituloLike.classList.add('tituloLike-post');
 
-
   imgUserHeadPost.src = './img-sn/user.jpg';
+  textAreaPost.textContent = data.comment;
   titleNameUser.textContent = 'user01';
   contadorLike.textContent = '100';
-  tituloLike.textContent = 'Me gusta';
+  tituloLike.textContent = data.date;
+
+  cardPost.id = cardPost;
+  textAreaPost.id = 'textAreaPost-txt';
 
   containerUserPost.append(imgUserHeadPost, titleNameUser);
   headPost.append(containerUserPost, btnOptionsPost);
@@ -41,5 +44,4 @@ function post(navigateTo) {
   containerPost.append(headPost, cardPost, likePost);
   return containerPost;
 }
-
 export default post;
