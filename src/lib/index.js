@@ -1,13 +1,19 @@
-import { serverTimestamp } from 'firebase/firestore';
+import { onSnapshot, serverTimestamp } from 'firebase/firestore';
 import {
-  addDoc, collection, db, getDocs,
+  db, collection, addDoc, getDocs, orderBy, query,
 } from './firestore';
-
+​
+const postCollection = collection(db, 'post');
+​
 export const createPostFirestore = (comment) => {
-  addDoc(collection(db, 'post'), {
+  addDoc(postCollection, {
     comment,
     date: serverTimestamp(),
   });
 };
-
-export const querySnapshot = getDocs(collection(db, 'post'));
+​
+export const querySnapshot = getDocs(postCollection);
+​
+const q = query(postCollection, orderBy('date', 'asc'));
+​
+export const paintRealTime = (callBack) => onSnapshot(q, callBack);
