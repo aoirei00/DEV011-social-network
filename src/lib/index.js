@@ -15,5 +15,4 @@ export const createPostFirestore = (comment) => {
 export const querySnapshot = getDocs(postCollection);
 
 const q = query(postCollection, orderBy('date', 'desc'));
-
 export const paintRealTime = (callBack) => onSnapshot(q, callBack);
