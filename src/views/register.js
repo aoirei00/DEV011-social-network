@@ -1,5 +1,6 @@
-import {getAuth, createUserWithEmailAndPassword, updateProfile} from 'firebase/auth';
+import { updateProfile } from 'firebase/auth';
 // import head from './wall/head';
+import { createEmailPassword } from '../lib/auth.js';
 
 function register(navigateTo) {
   // const headComponents = head('aqui');
@@ -53,7 +54,7 @@ function register(navigateTo) {
     const password = containerReg.querySelector('#password').value;
     const name = containerReg.querySelector('#name').value;
     const confirmPassword = containerReg.querySelector('#confirmPassword').value;
-    
+
     function isValidEmail(email) {
     // Expresión regular para validar un correo electrónico
       const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
@@ -78,9 +79,8 @@ function register(navigateTo) {
       return;
     }
 
-    const auth = getAuth();
     // Registra al usuario con correo electrónico y contraseña
-    createUserWithEmailAndPassword(auth, email, password)
+    createEmailPassword(email, password)
       .then((userCredential) => {
       // Usuario registrado con éxito
         const user = userCredential.user;
@@ -113,7 +113,7 @@ function register(navigateTo) {
   // });
 
   // containerReg.append(headComponents, btnMuro);
-containerReg.append();
+  containerReg.append();
   return containerReg;
 }
 

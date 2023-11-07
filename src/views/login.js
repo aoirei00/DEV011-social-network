@@ -1,7 +1,5 @@
 // file login.js
-import {
-  getAuth, signInWithPopup, GoogleAuthProvider, signInWithEmailAndPassword,
-} from 'firebase/auth';
+import { loginEmailPassword, loginPopUp } from '../lib/auth';
 // import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
 
 function login(navigateTo) {
@@ -46,22 +44,20 @@ function login(navigateTo) {
   imageGoogle.alt = 'Google png';
 
   buttonGoogle.addEventListener('click', () => {
-    const auth = getAuth();
-    const provider = new GoogleAuthProvider();
-
     // Abre una ventana emergente para iniciar sesión con Google
-    signInWithPopup(auth, provider).then((result) => { // El usuario ha iniciado sesión con éxito con Google
-      const user = result.user;
-      console.log('Usuario autenticado con éxito:', user);
-      history.pushState(null, null, '/muro');
+    loginPopUp()
+      .then((result) => { // El usuario ha iniciado sesión con éxito con Google
+        const user = result.user;
+        console.log('Usuario autenticado con éxito:', user);
+        // history.pushState(null, null, '/muro');
 
-      // llama a la función de navegación para cargar la vista "wall"
-      navigateTo('/muro');
-    }).catch((error) => { // Handle Errors here
-      const errorCode = error.code;
-      const errorMessage = error.message;
-      console.error('Error de autenticación con Google:', errorCode, errorMessage);
-    });
+        // llama a la función de navegación para cargar la vista "wall"
+        navigateTo('/muro');
+      }).catch((error) => { // Handle Errors here
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        console.error('Error de autenticación con Google:', errorCode, errorMessage);
+      });
   });
 
   buttonLogIn.textContent = 'Log In';
@@ -85,10 +81,7 @@ function login(navigateTo) {
     event.preventDefault();
     const email = containerLog.querySelector('#emailAddress').value;
     const password = containerLog.querySelector('#password').value;
-
-    const auth = getAuth();
-
-    signInWithEmailAndPassword(auth, email, password)
+    loginEmailPassword(email, password)
       .then((userCredential) => {
         const user = userCredential.user;
         alert('Inicio de sesión exitoso.', user);

@@ -1,5 +1,4 @@
 function post(data) {
-  console.log('soy data', data);
   const containerPost = document.createElement('div');
   const headPost = document.createElement('div');
   const containerUserPost = document.createElement('div');
@@ -29,7 +28,7 @@ function post(data) {
   tituloLike.classList.add('tituloLike-post');
 
   imgUserHeadPost.src = './img-sn/user.jpg';
-  textAreaPost.textContent = data.comment;
+  textAreaPost.textContent = data.comment; // aqui mandamos la informacion del input o text area
   titleNameUser.textContent = 'user01';
   contadorLike.textContent = '100';
   tituloLike.textContent = data.date;
