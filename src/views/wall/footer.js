@@ -15,7 +15,7 @@ function footer(navigateTo) {
   });
 
   btnCreatePost.addEventListener('click', () => {
-    navigateTo('/');
+    navigateTo('/modalCreatePost');
   });
 
   btnProfile.addEventListener('click', () => {
