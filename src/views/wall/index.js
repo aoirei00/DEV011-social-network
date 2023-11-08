@@ -2,7 +2,7 @@ import head from './head.js';
 import createPost from './createPost.js';
 import post from './post.js';
 import footer from './footer.js';
-import { paintRealTime } from '../../lib/index';
+import { deletePost, paintRealTime } from '../../lib/index';
 
 function muro(navigateTo) {
   console.log('muro');
@@ -22,12 +22,23 @@ function muro(navigateTo) {
   const sectionPost = document.createElement('section');
   sectionPost.style.marginBottom = '80px';
 
-  // pintadorealdecomentarios
   paintRealTime((querySnapshot) => {
     sectionPost.textContent = '';
     querySnapshot.forEach((doc) => {
-      const postComponents = post(doc.data());
+      const data = doc.data();
+      const id = doc.id;
+
+      // console.log(doc.id); // ID del documento
+      // console.log(doc.data()); // Datos del documento
+      const postComponents = post(data, id);
       sectionPost.append(postComponents);
+    });
+    const btnsDelete = sectionPost.querySelectorAll('.btn-delete');
+
+    btnsDelete.forEach((btn) => {
+      btn.addEventListener('click', ({ target: { dataset } }) => {
+        deletePost(dataset.id);
+      });
     });
   });
 
