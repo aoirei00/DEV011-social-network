@@ -10,6 +10,7 @@ import muro from './views/wall/index.js';
 import register from './views/register.js';
 import profile from './views/profile.js';
 import edit from './views/edit.js';
+// import modalEditDelete from './views/modals/optionsModal.js';
 
 const routes = [
   { path: '/', component: home },
@@ -19,6 +20,7 @@ const routes = [
   { path: '/register', component: register },
   { path: '/profile', component: profile },
   { path: '/edit', component: edit },
+  // { path: '/options', component: modalEditDelete },
 ];
 
 const defaultRoute = '/';

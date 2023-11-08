@@ -1,3 +1,5 @@
+import modalEditDelete from '../modals/optionsModal';
+
 function post(data) {
   const containerPost = document.createElement('div');
   const headPost = document.createElement('div');
@@ -31,16 +33,31 @@ function post(data) {
   textAreaPost.textContent = data.comment; // aqui mandamos la informacion del input o text area
   titleNameUser.textContent = 'user01';
   contadorLike.textContent = '100';
-  tituloLike.textContent = data.date;
+  // tituloLike.textContent = data.date;
 
   cardPost.id = cardPost;
   textAreaPost.id = 'textAreaPost-txt';
 
+  const modal = document.createElement('section');
+  btnOptionsPost.addEventListener('click', () => {
+    // console.log('aparece');
+    const moreOptions = modalEditDelete();
+    // console.log('ay');
+    modal.append(moreOptions);
+    modal.style.display = 'block';
+    // return modal;
+  });
+
   containerUserPost.append(imgUserHeadPost, titleNameUser);
+  // modalContainer.append(buttonEdit, buttoDetele, buttonClose);
+  // modal.append(moreOptions);
   headPost.append(containerUserPost, btnOptionsPost);
   cardPost.append(textAreaPost);
   likePost.append(like, contadorLike, tituloLike);
+  document.body.appendChild(modal);
   containerPost.append(headPost, cardPost, likePost);
+
   return containerPost;
 }
+
 export default post;

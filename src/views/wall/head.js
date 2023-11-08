@@ -12,7 +12,6 @@ function head(navigateTo) {
   btnSignUpWall.classList.add('btnSignUp-wall');
 
   imgLogoWall.src = './img-sn/festilogoLetras.svg';
-  
   btnSignUpWall.textContent = 'Sign Out';
   btnSignUpWall.addEventListener('click', () => {
     navigateTo('/');
