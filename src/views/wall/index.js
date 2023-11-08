@@ -20,15 +20,16 @@ function muro(navigateTo) {
   //   });
   // });
   const sectionPost = document.createElement('section');
+  sectionPost.style.marginBottom = '80px';
 
-  // pintadorealdecomentarios
   paintRealTime((querySnapshot) => {
     sectionPost.textContent = '';
     querySnapshot.forEach((doc) => {
+      const data = doc.data();
+      const id = doc.id;
       // console.log(doc.id); // ID del documento
       // console.log(doc.data()); // Datos del documento
-      const postComponents = post(doc.data());
-      // postComponents.value = doc.data().comment;
+      const postComponents = post(data, id);
       sectionPost.append(postComponents);
     });
   });
