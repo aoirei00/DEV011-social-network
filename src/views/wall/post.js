@@ -31,10 +31,10 @@ function post(data) {
   textAreaPost.textContent = data.comment; // aqui mandamos la informacion del input o text area
   titleNameUser.textContent = 'user01';
   contadorLike.textContent = '100';
-  tituloLike.textContent = data.date;
+  tituloLike.textContent = 'comentarios';
 
   cardPost.id = cardPost;
-  textAreaPost.id = 'textAreaPost-txt';
+  textAreaPost.id = 'textAreaPost-id';
 
   containerUserPost.append(imgUserHeadPost, titleNameUser);
   headPost.append(containerUserPost, btnOptionsPost);
