@@ -1,6 +1,5 @@
-import { onSnapshot, serverTimestamp } from 'firebase/firestore';
 import {
-  db, collection, addDoc, getDocs, orderBy, query, deleteDoc, doc,
+  db, collection, addDoc, getDocs, orderBy, query, onSnapshot, serverTimestamp, doc, deleteDoc,
 } from './firestore';
 
 const postCollection = collection(db, 'post');
