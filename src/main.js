@@ -1,7 +1,5 @@
 // Este es el punto de entrada de tu aplicacion
 
-// import { myFunction } from './lib/index.js';
-
 // file main.js
 import home from './views/home';
 import login from './views/login.js';
@@ -10,7 +8,7 @@ import muro from './views/wall/index.js';
 import register from './views/register.js';
 import profile from './views/profile.js';
 import edit from './views/edit.js';
-// import modalEditDelete from './views/modals/optionsModal.js';
+import { checkAuthStatus } from './lib/auth.js'; // Solo importa la función de autenticación
 
 const routes = [
   { path: '/', component: home },
@@ -20,7 +18,6 @@ const routes = [
   { path: '/register', component: register },
   { path: '/profile', component: profile },
   { path: '/edit', component: edit },
-  // { path: '/options', component: modalEditDelete },
 ];
 
 const defaultRoute = '/';
@@ -49,6 +46,27 @@ window.onpopstate = () => {
   navigateTo(window.location.pathname);
 };
 
+// Despues de navegateTo
+checkAuthStatus((user) => {
+  const currentPath = window.location.pathname;
+  if (user) {
+    // Usuario autenticado
+    const allowedRoutes = ['/muro', '/perfil'];
+    if (!allowedRoutes.includes(currentPath)) {
+      // Redirige a la página de muro si intenta acceder a una ruta no permitida
+      navigateTo('/muro');
+    } else {
+      // Usuario autenticado, permite la navegación a las rutas permitidas (muro y perfil)
+      navigateTo(currentPath);
+    }
+  } else {
+    // Usuario no autenticado
+    const publicRoutes = ['/login', '/register', '/home'];
+    if (!publicRoutes.includes(currentPath)) {
+      // Redirige a la página de inicio si intenta acceder a una ruta no permitida
+      navigateTo('/home');
+    }
+  }
+});
+// Carga la ruta inicial
 navigateTo(window.location.pathname || defaultRoute);
-
-// myFunction();

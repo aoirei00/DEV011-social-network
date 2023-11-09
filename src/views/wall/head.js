@@ -1,3 +1,5 @@
+import { signOutUser } from '../../lib/auth.js';
+
 function head(navigateTo) {
   const sectionHead = document.createElement('section');
   const containerHead = document.createElement('div');
@@ -14,7 +16,18 @@ function head(navigateTo) {
   imgLogoWall.src = './img-sn/festilogoLetras.svg';
   btnSignUpWall.textContent = 'Sign Out';
   btnSignUpWall.addEventListener('click', () => {
-    navigateTo('/');
+    signOutUser()
+      .then(() => {
+      // Usuario desconectado con éxito
+      // Redirige a la página de inicio
+        navigateTo('/');
+      })
+      .catch((error) => {
+      // Maneja errores de cierre de sesión
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        console.error('Error al cerrar sesión:', errorCode, errorMessage);
+      });
   });
 
   containerHead.append(imgLogoWall, btnSignUpWall);
