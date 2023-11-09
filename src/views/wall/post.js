@@ -1,5 +1,3 @@
-import { doc } from "firebase/firestore";
-
 function post(data, id) {
   const containerPost = document.createElement('div');
   const headPost = document.createElement('div');
