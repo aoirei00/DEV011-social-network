@@ -1,5 +1,5 @@
 import head from './head.js';
-import createPost from './createPost.js';
+import { createPost } from './createPost.js';
 import post from './post.js';
 import footer from './footer.js';
 import modalConfirmationDelete from '../modals/modalConfirmationDelete';
@@ -16,19 +16,6 @@ function muro(navigateTo) {
   sectionPost.style.marginBottom = '80px';
 
   /// /////////////////////////////////
-
-  paintRealTime((querySnapshot) => {
-    sectionPost.textContent = '';
-    querySnapshot.forEach((doc) => {
-      const data = doc.data();
-      const id = doc.id;
-      const postComponents = post(data, id);
-      sectionPost.append(postComponents);
-    });
-    const btnsDelete = sectionPost.querySelectorAll('.btn-delete');
-    openModal(btnsDelete);
-  });
-
   function openModal(btnsDelete) {
     btnsDelete.forEach((btn) => {
       btn.addEventListener('click', () => {
@@ -53,8 +40,21 @@ function muro(navigateTo) {
     });
   }
 
+  paintRealTime((querySnapshot) => {
+    sectionPost.textContent = '';
+    querySnapshot.forEach((doc) => {
+      const data = doc.data();
+      const id = doc.id;
+      const postComponents = post(data, id);
+      sectionPost.append(postComponents);
+    });
+    const btnsDelete = sectionPost.querySelectorAll('.btn-delete');
+    openModal(btnsDelete);
+  });
+
   sectionWall.append(headComponents, createPostComponents, sectionPost, footerComponents);
 
   return sectionWall;
 }
+
 export default muro;
