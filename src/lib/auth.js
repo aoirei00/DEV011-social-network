@@ -1,5 +1,6 @@
 import {
-  auth, signInWithEmailAndPassword, provider, signInWithPopup, createUserWithEmailAndPassword, signOut,
+  auth, signInWithEmailAndPassword, provider, signInWithPopup, createUserWithEmailAndPassword,
+  signOut,
 } from './firebase.js';
 
 export const loginEmailPassword = (email, password) => {
