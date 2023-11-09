@@ -1,4 +1,4 @@
-import modalEditDelete from '../modals/optionsModal';
+// import modalEditDelete from './optionsModal';
 
 function post(data) {
   const containerPost = document.createElement('div');
@@ -16,6 +16,7 @@ function post(data) {
   const tituloLike = document.createElement('h1');
 
   containerPost.classList.add('container-post');
+  containerPost.dataset.id = post.id; // this newwww
   headPost.classList.add('head-post');
   containerUserPost.classList.add('containerUser-post');
   imgUserHeadPost.classList.add('ImgUser-post');
@@ -38,15 +39,16 @@ function post(data) {
   cardPost.id = cardPost;
   textAreaPost.id = 'textAreaPost-txt';
 
-  const modal = document.createElement('section');
-  btnOptionsPost.addEventListener('click', () => {
-    // console.log('aparece');
-    const moreOptions = modalEditDelete();
-    // console.log('ay');
-    modal.append(moreOptions);
-    modal.style.display = 'block';
-    // return modal;
-  });
+  // MODALANTERIOR
+  // const modal = document.createElement('section');
+  // btnOptionsPost.addEventListener('click', () => {
+  //   // console.log('aparece');
+  //   const moreOptions = modalEditDelete();
+  //   // console.log('ay');
+  //   modal.append(moreOptions);
+  //   modal.style.display = 'block';
+  //   // return modal;
+  // });
 
   containerUserPost.append(imgUserHeadPost, titleNameUser);
   // modalContainer.append(buttonEdit, buttoDetele, buttonClose);
@@ -54,7 +56,7 @@ function post(data) {
   headPost.append(containerUserPost, btnOptionsPost);
   cardPost.append(textAreaPost);
   likePost.append(like, contadorLike, tituloLike);
-  document.body.appendChild(modal);
+  // document.body.appendChild(modal);
   containerPost.append(headPost, cardPost, likePost);
 
   return containerPost;
