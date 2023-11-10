@@ -57,6 +57,7 @@ function profile(navigateTo) {
 
   nav.appendChild(imgProfile);
   document.body.appendChild(nav);
+  // eslint-disable-next-line max-len
   bodyCont.append(imageHeader, nav, image, name, address, article, main, buttonEditP, buttonExit, homeBar, homeIcon, moreIcon, profileIcon);
   return bodyCont;
 }

@@ -1,7 +1,5 @@
 // Este es el punto de entrada de tu aplicacion
 
-// import { myFunction } from './lib/index.js';
-
 // file main.js
 import home from './views/home';
 import login from './views/login.js';
@@ -63,10 +61,10 @@ checkAuthStatus((user) => {
     }
   } else {
     // Usuario no autenticado
-    const publicRoutes = ['/login', '/register', '/home'];
+    const publicRoutes = ['/login', '/register', '/'];
     if (!publicRoutes.includes(currentPath)) {
       // Redirige a la página de inicio si intenta acceder a una ruta no permitida
-      navigateTo('/home');
+      navigateTo('/');
     }
   }
 });

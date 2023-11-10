@@ -1,5 +1,6 @@
 import {
-  auth, signInWithEmailAndPassword, provider, signInWithPopup, createUserWithEmailAndPassword, signOut,
+  auth, signInWithEmailAndPassword, provider, signInWithPopup, createUserWithEmailAndPassword,
+  signOut,
 } from './firebase.js';
 
 export const loginEmailPassword = (email, password) => {
@@ -22,6 +23,5 @@ export const checkAuthStatus = (callback) => {
     callback(user);
   });
 };
-
 // Funcion para cerrar sesion
 export const signOutUser = () => signOut(auth);
