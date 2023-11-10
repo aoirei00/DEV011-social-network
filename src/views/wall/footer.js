@@ -4,7 +4,6 @@ function footer(navigateTo) {
   const btnCreatePost = document.createElement('button');
   const btnProfile = document.createElement('button');
  
-
   containerFooterWall.classList.add('containerFooter-wall');
   btnHome.classList.add('btnHome-footer');
   btnCreatePost.classList.add('btnCreatePost-footer');

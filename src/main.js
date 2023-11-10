@@ -10,6 +10,7 @@ import muro from './views/wall/index.js';
 import register from './views/register.js';
 import profile from './views/profile.js';
 import edit from './views/edit.js';
+import { checkAuthStatus } from './lib/auth.js'; // Solo importa la función de autenticación
 
 const routes = [
   { path: '/', component: home },
@@ -47,6 +48,28 @@ window.onpopstate = () => {
   navigateTo(window.location.pathname);
 };
 
-navigateTo(window.location.pathname || defaultRoute);
+checkAuthStatus((user) => {
+  const currentPath = window.location.pathname;
 
-// myFunction();
+  if (user) {
+    // Usuario autenticado
+    const allowedRoutes = ['/muro', '/perfil'];
+    if (!allowedRoutes.includes(currentPath)) {
+      // Redirige a la página de muro si intenta acceder a una ruta no permitida
+      navigateTo('/muro');
+    } else {
+      // Usuario autenticado, permite la navegación a las rutas permitidas (muro y perfil)
+      navigateTo(currentPath);
+    }
+  } else {
+    // Usuario no autenticado
+    const publicRoutes = ['/login', '/register', '/home'];
+    if (!publicRoutes.includes(currentPath)) {
+      // Redirige a la página de inicio si intenta acceder a una ruta no permitida
+      navigateTo('/home');
+    }
+  }
+});
+
+// Carga la ruta inicial
+navigateTo(window.location.pathname || defaultRoute);
