@@ -1,8 +1,10 @@
+/* eslint-disable no-use-before-define */
 import head from './head.js';
-import createPost from './createPost.js';
+import { createPost } from './createPost.js';
 import post from './post.js';
 import footer from './footer.js';
-import modalConfirmationDelete from '../modals/modalConfirmationDelete';
+import modalConfirmationDelete from '../modals/modalConfirmationDelete.js';
+
 
 import { deletePost, paintRealTime } from '../../lib/index';
 
@@ -16,7 +18,6 @@ function muro(navigateTo) {
   sectionPost.style.marginBottom = '80px';
 
   /// /////////////////////////////////
-
   paintRealTime((querySnapshot) => {
     sectionPost.textContent = '';
     querySnapshot.forEach((doc) => {
@@ -46,7 +47,9 @@ function muro(navigateTo) {
           modalDelete.setAttribute('style', 'display: none;');
           deletePost(dataId);
         });
+
         btnConfirmCancel.addEventListener('click', () => {
+          console.log('Acción de cancelación confirmada');
           modalDelete.style.display = 'none';
         });
       });

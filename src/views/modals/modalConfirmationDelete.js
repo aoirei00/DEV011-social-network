@@ -11,10 +11,11 @@ function modalConfirmationDelete() {
   btnConfirmDelete.classList.add('btnConfirm-delete');
   btnConfirmCancel.classList.add('btnConfirm-cancel');
 
+  tituloDelete.textContent = 'Would you like to delete this post?';
   btnConfirmCancel.textContent = 'Cancel';
   btnConfirmDelete.textContent = 'Delete';
 
-  modalContent.append(tituloDelete, btnConfirmDelete, btnConfirmCancel);
+  modalContent.append(tituloDelete, btnConfirmCancel, btnConfirmDelete);
   sectionConfirmModal.append(modalContent);
 
   return sectionConfirmModal;
