@@ -3,6 +3,8 @@
  * @jest-environment jsdom
  */
 
+// Se immportan las funciones de autenticación y el módulo de firebase
+
 jest.mock('../src/lib/firebase', () => {
   // Se mockea todo el módulo firebaseAuth
   const originalModule = jest.requireActual('../src/lib/firebase');
@@ -11,9 +13,11 @@ jest.mock('../src/lib/firebase', () => {
     createUserWithEmailAndPassword: jest.fn().mockResolvedValue({ user: { uid: '123' } }),
   };
 });
-// Se immportan las funciones de autenticación y el módulo de firebase
+// eslint-disable-next-line import/first
 import { createEmailPassword } from '../src/lib/auth';
+// eslint-disable-next-line import/first
 import * as firebaseAuth from '../src/lib/firebase';
+
 describe('Se prueba la funcion createEmailPassword', () => {
   it('Se hace la prueba colocando los argumentos correctos para hace un registro', () => {
     // Se mockea email y password
@@ -22,6 +26,7 @@ describe('Se prueba la funcion createEmailPassword', () => {
     // Se llama a la funcion del archivo auth.js
     const result = createEmailPassword(email, password);
     // Se espera que la funcion se lleme con los argumentos correctos para que se cumpla la prueba.
+    // eslint-disable-next-line max-len
     expect(firebaseAuth.createUserWithEmailAndPassword).toHaveBeenCalledWith(firebaseAuth.auth, email, password);
     // Se espera como resultado el objeto que es el usuario
     return expect(result).resolves.toEqual({ user: { uid: '123' } });

@@ -1,3 +1,4 @@
+/* eslint-disable no-use-before-define */
 import head from './head.js';
 import { createPost } from './createPost.js';
 import post from './post.js';

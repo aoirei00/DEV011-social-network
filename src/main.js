@@ -61,12 +61,13 @@ checkAuthStatus((user) => {
     }
   } else {
     // Usuario no autenticado
-    const publicRoutes = ['/login', '/register', '/home'];
+    const publicRoutes = ['/login', '/register', '/'];
     if (!publicRoutes.includes(currentPath)) {
       // Redirige a la página de inicio si intenta acceder a una ruta no permitida
-      navigateTo('/home');
+      navigateTo('/');
     }
   }
 });
+
 // Carga la ruta inicial
 navigateTo(window.location.pathname || defaultRoute);
