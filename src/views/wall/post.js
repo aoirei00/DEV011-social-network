@@ -26,6 +26,8 @@ function post(data, id) {
   // buttons
   // btnOptionsPost.classList.add('btnOptions-post');
   btnEdit.classList.add('btn-edit');
+  btnEdit.setAttribute('data-id', id);
+  btnEdit.setAttribute('data-comment', data.comment);
   btnDelete.classList.add('btn-delete');
   btnDelete.setAttribute('data-id', id);
 
