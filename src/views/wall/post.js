@@ -33,6 +33,7 @@ function post(data, id) {
 
   cardPost.classList.add('card-post');
   textAreaPost.classList.add('txtArea-post');
+  textAreaPost.setAttribute('readonly', 'true');
   likePost.classList.add('like-post');
   like.classList.add('btnLike-post');
   contadorLike.classList.add('contadorLike-post');

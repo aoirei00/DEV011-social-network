@@ -6,7 +6,9 @@ import footer from './footer.js';
 import modalConfirmationDelete from '../modals/modalConfirmationDelete.js';
 import modalEdit from '../modals/modalEdit.js';
 
-import { deletePost, paintRealTime, updatePost } from '../../lib/index';
+import {
+  deletePost, paintRealTime, updatePost, createPostFirestore,
+} from '../../lib/index';
 
 function muro(navigateTo) {
   const sectionWall = document.createElement('section');
@@ -16,6 +18,20 @@ function muro(navigateTo) {
   const footerComponents = footer(navigateTo);
   const sectionPost = document.createElement('section');
   sectionPost.style.marginBottom = '80px';
+
+  /// //////////////////////////////////
+
+  createPostComponents.querySelector('.button-publish').addEventListener('click', () => {
+    const txtArea = createPostComponents.querySelector('.txtAreaCreate-post');
+    const comment = txtArea.value;
+
+    if (comment === '') {
+      alert('no hay datos u.u');
+    } else {
+      createPostFirestore(comment);
+    }
+    txtArea.value = '';
+  });
 
   /// /////////////////////////////////
   paintRealTime((querySnapshot) => {
