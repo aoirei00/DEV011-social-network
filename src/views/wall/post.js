@@ -1,6 +1,8 @@
 // import modalConfirmationDelete from '../modals/modalConfirmationDelete.js';
+import { contadorLikes } from '../../lib/index.js';
+import { checkAuthStatus } from '../../lib/auth.js';
 
-function post(data, id) {
+function post(data, id, userId) {
   const containerPost = document.createElement('div');
   const headPost = document.createElement('div');
   const containerUserPost = document.createElement('div');
@@ -26,11 +28,14 @@ function post(data, id) {
   // buttons
   // btnOptionsPost.classList.add('btnOptions-post');
   btnEdit.classList.add('btn-edit');
+  btnEdit.setAttribute('data-id', id);
+  btnEdit.setAttribute('data-comment', data.comment);
   btnDelete.classList.add('btn-delete');
   btnDelete.setAttribute('data-id', id);
 
   cardPost.classList.add('card-post');
   textAreaPost.classList.add('txtArea-post');
+  textAreaPost.setAttribute('readonly', 'true');
   likePost.classList.add('like-post');
   like.classList.add('btnLike-post');
   contadorLike.classList.add('contadorLike-post');
@@ -44,7 +49,30 @@ function post(data, id) {
 
   cardPost.id = cardPost;
   textAreaPost.id = 'textAreaPost-txt';
+/////////////////////////////////////////////////////////////////////////////////////
+  // Devuelve una promesa que se resolverá con el userId
+  const getUserId = () => new Promise((resolve) => {
+    checkAuthStatus((user) => {
+      if (user) {
+        resolve(user.uid);
+      } else {
+        resolve(null);
+      }
+    });
+  });
 
+  // Cuando hagas clic en el botón "like"
+  like.addEventListener('click', async () => {
+    const postId = id;
+    const userId = await getUserId(); // Esperar a que se resuelva la promesa
+
+    if (userId) {
+      contadorLikes(postId, userId);
+    } else {
+      console.error('Error: userId no está definido.');
+    }
+  });
+  ///////////////////////////////////////////////////////////////////////////////////////////
   containerUserPost.append(imgUserHeadPost, titleNameUser);
   headPost.append(containerUserPost, btnEdit, btnDelete);
   cardPost.append(textAreaPost);

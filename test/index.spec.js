@@ -3,8 +3,6 @@
  * @jest-environment jsdom
  */
 
-// Se immportan las funciones de autenticación y el módulo de firebase
-
 jest.mock('../src/lib/firebase', () => {
   // Se mockea todo el módulo firebaseAuth
   const originalModule = jest.requireActual('../src/lib/firebase');

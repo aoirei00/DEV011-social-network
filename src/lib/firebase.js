@@ -1,6 +1,7 @@
 import {
   getAuth, signOut,
-  signInWithPopup, GoogleAuthProvider, signInWithEmailAndPassword, createUserWithEmailAndPassword,
+  signInWithPopup, GoogleAuthProvider, signInWithEmailAndPassword,
+  createUserWithEmailAndPassword,
 } from 'firebase/auth';
 
 import { app } from '../config/firebaseConfig';

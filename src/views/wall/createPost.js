@@ -27,21 +27,16 @@ export const createPost = () => {
   buttonPublish.id = 'btnPost';
   buttonPublish.textContent = 'Publish';
 
-  buttonPublish.addEventListener('click', () => {
+  /* buttonPublish.addEventListener('click', () => {
     const comment = txtAreaCreatePost.value; // Usar txtAreaCreatePost directamente
     createPostFirestore(comment);
     txtAreaCreatePost.value = '';
-  });
+  }); */
 
   containerImg.append(circleImg);
   circleImg.append(imgUserCreatePost);
   containerInputPost.append(containerImg, txtAreaCreatePost);
   containerCreatePost.append(containerInputPost, buttonPublish);
-
-  // containerCreatePost.querySelector('#btnPost').addEventListener('click', () => {
-  //   const contentPost = containerCreatePost.querySelector('#inputPost').value;
-  //   console.log('funcion click', contentPost);
-  // });
 
   return containerCreatePost;
 };
