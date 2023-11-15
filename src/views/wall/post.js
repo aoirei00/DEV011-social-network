@@ -30,6 +30,12 @@ function post(data, id) {
   btnEdit.setAttribute('data-comment', data.comment);
   btnDelete.classList.add('btn-delete');
   btnDelete.setAttribute('data-id', id);
+  like.setAttribute('data-id', id);
+  // printLike ? like.classList.add('iconLike-post') : null;
+  if (!data.likes.length) {
+    console.log('vacio');
+    like.classList.add('iconLike-post2');
+  }
 
   cardPost.classList.add('card-post');
   textAreaPost.classList.add('txtArea-post');
@@ -43,7 +49,7 @@ function post(data, id) {
 
   textAreaPost.textContent = data.comment; // aqui mandamos la informacion del textarea
   titleNameUser.textContent = 'user01';
-  contadorLike.textContent = '100';
+  contadorLike.textContent = data.likes ? data.likes.length : 0;
 
   cardPost.id = cardPost;
   textAreaPost.id = 'textAreaPost-txt';
