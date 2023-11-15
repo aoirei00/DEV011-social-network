@@ -1,8 +1,5 @@
 // import modalConfirmationDelete from '../modals/modalConfirmationDelete.js';
-import { contadorLikes } from '../../lib/index.js';
-import { checkAuthStatus } from '../../lib/auth.js';
-
-function post(data, id, userId) {
+function post(data, id) {
   const containerPost = document.createElement('div');
   const headPost = document.createElement('div');
   const containerUserPost = document.createElement('div');
@@ -32,7 +29,12 @@ function post(data, id, userId) {
   btnEdit.setAttribute('data-comment', data.comment);
   btnDelete.classList.add('btn-delete');
   btnDelete.setAttribute('data-id', id);
-
+  like.setAttribute('data-id', id);
+  // printLike ? like.classList.add('iconLike-post') : null;
+  if (!data.likes.length) {
+    console.log('vacio');
+    like.classList.add('iconLike-post2');
+  }
   cardPost.classList.add('card-post');
   textAreaPost.classList.add('txtArea-post');
   textAreaPost.setAttribute('readonly', 'true');
@@ -45,34 +47,11 @@ function post(data, id, userId) {
 
   textAreaPost.textContent = data.comment; // aqui mandamos la informacion del textarea
   titleNameUser.textContent = 'user01';
-  contadorLike.textContent = '100';
+  contadorLike.textContent = data.likes ? data.likes.length : 0;
 
   cardPost.id = cardPost;
   textAreaPost.id = 'textAreaPost-txt';
-/////////////////////////////////////////////////////////////////////////////////////
-  // Devuelve una promesa que se resolverá con el userId
-  const getUserId = () => new Promise((resolve) => {
-    checkAuthStatus((user) => {
-      if (user) {
-        resolve(user.uid);
-      } else {
-        resolve(null);
-      }
-    });
-  });
 
-  // Cuando hagas clic en el botón "like"
-  like.addEventListener('click', async () => {
-    const postId = id;
-    const userId = await getUserId(); // Esperar a que se resuelva la promesa
-
-    if (userId) {
-      contadorLikes(postId, userId);
-    } else {
-      console.error('Error: userId no está definido.');
-    }
-  });
-  ///////////////////////////////////////////////////////////////////////////////////////////
   containerUserPost.append(imgUserHeadPost, titleNameUser);
   headPost.append(containerUserPost, btnEdit, btnDelete);
   cardPost.append(textAreaPost);

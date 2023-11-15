@@ -1,6 +1,6 @@
 import {
   db, collection, addDoc, getDocs, orderBy, query, onSnapshot, serverTimestamp, doc, deleteDoc,
-  updateDoc, arrayUnion, arrayRemove, getFirestore,
+  updateDoc, arrayUnion, getFirestore, getDoc,
 } from './firestore';
 
 const postCollection = collection(db, 'post');
@@ -12,10 +12,6 @@ export const createPostFirestore = (comment) => {
     likes: [],
   });
 };
-
-//  export await updateDoc(postCollection, {
-//   comment,
-// });
 
 export const querySnapshot = getDocs(postCollection);
 
@@ -34,17 +30,29 @@ export const updatePost = async (id, newData) => {
   }
 };
 ////////////////////////////funcion de agregar like/////////////////////////////////////
-export const contadorLikes = (postId, userId) => {
+export const setLikes = async (postId, userId) => {
   try {
-    const db = getFirestore();
-    const postRef = doc(db, 'post', postId);
-
+    const bd = getFirestore();
+    const postRef = doc(bd, 'post', postId);
     // Actualiza el campo "likes" en Firestore utilizando arrayUnion
-    updateDoc(postRef, {
-      likes: arrayUnion(userId),
-    });
-
+    // if (postRef.) {
+    // }
+    const getDocuement = await getDoc(postRef);
+    console.log(getDocuement.data().likes);
+    if (getDocuement.data().likes.includes(userId)) {
+      console.log('deberria entrar cuando ya este el like');
+      const newArr = getDocuement.data().likes.filter((like) => like !== userId);
+      updateDoc(postRef, {
+        likes: newArr,
+      });
+    } else {
+      console.log('entra al like eeeeeeeeeeeeeeeeeeeeeeeeeeeee');
+      updateDoc(postRef, {
+        likes: arrayUnion(userId),
+      });
+    }
     console.log(`Se dio like al post ${postId}`);
+    console.log(`usuario ${userId}`);
   } catch (error) {
     console.error('Error al actualizar los likes:', error);
   }
