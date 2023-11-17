@@ -1,9 +1,18 @@
 .section-wall {
    display: flex;
    flex-direction: column;
+   background-color: #2D2D2D;
 }
 .sectionPost{
-   display: contents;
+   /* display: contents;  aqui se realizaron cambios para que se viera mejor en desktop*/
+   width: 100%;
+    display: contents;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+
+
 }
 .container-head {
    width: 20%; /*25%*/
@@ -287,10 +296,10 @@ h1 {
       width: 100%;
       height: auto;
       background-color: #2D2D2D;
-      display: contents;
+      /* display: contents; */
    }
    .sectionPost {
-      display: contents;
+      width: 100%;
    }
    /* ///////////////////////////// Head wall //////////////////////////// */
    .container-head {
