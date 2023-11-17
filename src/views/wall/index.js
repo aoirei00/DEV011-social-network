@@ -67,18 +67,20 @@ function muro(navigateTo) {
     // querysnapshot nos ayuda a pintar los elementos en tiempo real en la seccion post de muro
     querySnapshot.forEach((doc) => {
       // aqui estan los datos que nos trae de la bd (doc) y los guardamos en variables
+      const loggedUser = localStorage.getItem('userId');
       const data = doc.data();
       const id = doc.id;
       // aqui guardamos en un array lo que trae del campo likes de la bd
       arrayLikes.push(doc.data().likes);
-      //
-      const postComponents = post(data, id);
+      const postComponents = post(data, id, loggedUser);
       sectionPost.append(postComponents);
     });
     // traemos los botones (clases) del modulo post.js
     const btnsDelete = sectionPost.querySelectorAll('.btn-delete');
     const btnsEdit = sectionPost.querySelectorAll('.btn-edit');
     const btnsLike = sectionPost.querySelectorAll('.btnLike-post');
+
+    // /////////////////////////////////////////////////////////
 
     openModal(btnsDelete);
     openModalEdit(btnsEdit);
@@ -104,6 +106,7 @@ function muro(navigateTo) {
       });
   }
 
+  // obtiene el usuario logeado y cuando lo tiene lo guarda en localstorage
   const getUserId = () => new Promise((resolve) => {
     checkAuthStatus((user) => {
       if (user) {
@@ -136,14 +139,13 @@ function muro(navigateTo) {
     return false;
   }
 
+  // metodo para sincronizar los likes de la coleccion con los datos que muestra en los post
   function syncLikes(btnsLike) {
     btnsLike.forEach((btn) => {
       // Cuando hagas clic en el botón "like"
       btn.addEventListener('click', async () => {
-        console.log('entro');
         const postId = btn.dataset.id;
         const userId = await getUserId(); // Esperar a que se resuelva la promesa
-
         if (userId) {
           // printLikes(btn);
           setLikes(postId, userId);

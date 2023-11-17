@@ -43,11 +43,6 @@ export const setLikes = async (postId, userId) => {
   try {
     const bd = getFirestore();
     const postRef = doc(bd, 'post', postId);
-
-    // Actualiza el campo "likes" en Firestore utilizando arrayUnion
-    // if (postRef.) {
-
-    // }
     const getDocuement = await getDoc(postRef);
     console.log(getDocuement.data().likes);
     if (getDocuement.data().likes.includes(userId)) {
@@ -70,5 +65,3 @@ export const setLikes = async (postId, userId) => {
   }
 };
 
-// export const usersLikes = getDocs(postCollection.likes);
-// console.log(usersLikes);

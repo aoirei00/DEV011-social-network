@@ -1,6 +1,6 @@
 // import modalConfirmationDelete from '../modals/modalConfirmationDelete.js';
 
-function post(data, id) {
+function post(data, id, loggedUser) {
   const containerPost = document.createElement('div');
   const headPost = document.createElement('div');
   const containerUserPost = document.createElement('div');
@@ -32,6 +32,14 @@ function post(data, id) {
   btnDelete.setAttribute('data-id', id);
   like.setAttribute('data-id', id);
   // printLike ? like.classList.add('iconLike-post') : null;
+  const idUserPost = data.userId ? data.userId : 0;
+  if (loggedUser !== idUserPost) {
+    btnEdit.style.display = 'none';
+    btnDelete.style.display = 'none';
+    // like.classList.add('iconLike-post2');
+    console.log(`el senior del post si esta...${loggedUser}`);
+  }
+
   if (!data.likes.length) {
     console.log('vacio');
     like.classList.add('iconLike-post2');
