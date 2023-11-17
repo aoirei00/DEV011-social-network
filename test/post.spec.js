@@ -4,62 +4,73 @@
  */
 
 // Importa las funciones individuales desde la ruta correcta
-import { createPostFirestore, paintRealTime, deletePost, updatePost } from '../src/lib/firestore';
+// Importa las funciones y las dependencias necesarias
+import { createPostFirestore, setLikes, deletePost } from '../src/lib/index.js';
+import {
+  addDoc, serverTimestamp, getDoc, updateDoc, arrayUnion, deleteDoc,
+} from '../src/lib/firestore.js'; // Ajusta las importaciones según sea necesario
 
-// Mock del módulo firestore.js
-jest.mock('../src/lib/firestore.js', () => {
-  const originalModule = jest.requireActual('../src/lib/firestore.js');
-  return {
-    ...originalModule,
-    db: {
-      ...originalModule.db,
-      addDoc: jest.fn(),
-      onSnapshot: jest.fn(),
-      deleteDoc: jest.fn(),
-      updateDoc: jest.fn(),
-    },
-  };
-});
+jest.mock('firebase/firestore', () => ({
+  ...jest.requireActual('firebase/firestore'), // Mantiene las funciones no mockeadas
+  addDoc: jest.fn(),
+  getDoc: jest.fn(),
+  updateDoc: jest.fn(),
+  deleteDoc: jest.fn(),
 
-describe('Firestore Functions', () => {
-  afterEach(() => {
-    jest.clearAllMocks();
-  });
+}));
 
-  test('createPostFirestore should add a new post', async () => {
-    await createPostFirestore('New post');
-    expect(firestore.db.addDoc).toHaveBeenCalledWith(
+// Descripción de las pruebas para createPostFirestore
+describe('Prueba para la funcion createPostFirestore', () => {
+  test('Muestra la creacion de un post', async () => {
+    // Configurar mocks necesarios
+    addDoc.mockResolvedValueOnce();
+
+    // Llamar a la función
+    await createPostFirestore('Post');
+
+    // Asegurar que la función addDoc fue llamada con los parámetros esperados
+    expect(addDoc).toHaveBeenCalledWith(
       expect.anything(),
       {
-        comment: 'New post',
-        date: expect.anything(),
+        comment: 'Post',
+        date: serverTimestamp(),
         likes: [],
       },
     );
   });
+});
 
-  test('paintRealTime should set up a snapshot listener', () => {
-    paintRealTime(() => {});
-    expect(firestore.db.onSnapshot).toHaveBeenCalledWith(
+// Descripción de las pruebas para setLikes
+describe('Prueba la funcion setLikes', () => {
+  test('Llama a la funcion y muestra el id del post y el de usuario ', async () => {
+    // Configurar mocks necesarios
+    getDoc.mockResolvedValueOnce({ data: () => ({ likes: [] }) });
+
+    // Llamar a la función
+    await setLikes('mock-post-id', 'mock-user-id');
+
+    // Asegurar que la función getDoc fue llamada con los parámetros esperados
+    expect(getDoc).toHaveBeenCalledWith(expect.anything());
+
+    // Asegurar que la función updateDoc fue llamada con los parámetros esperados
+    expect(updateDoc).toHaveBeenCalledWith(
       expect.anything(),
-      expect.any(Function),
+      { likes: arrayUnion('mock-user-id') },
     );
   });
+});
 
-  test('deletePost should delete a post', async () => {
-    await deletePost('post-id-to-delete');
-    expect(firestore.db.deleteDoc).toHaveBeenCalledWith(
-      expect.anything(),
-      'post-id-to-delete',
-    );
-  });
+describe('Prueba la funcion deletePost', () => {
+  test('Se elimina el post seleccionado', async () => {
+    // Configurar mocks necesarios
+    deleteDoc.mockResolvedValueOnce();
 
-  test('updatePost should update a post', async () => {
-    await updatePost('post-id-to-update', { comment: 'Updated post' });
-    expect(firestore.db.updateDoc).toHaveBeenCalledWith(
+    // Llamar a la función
+    await deletePost('mock-post-id-to-delete');
+
+    // Asegurar que la función deleteDoc fue llamada con los parámetros esperados
+    expect(deleteDoc).toHaveBeenCalledWith(
       expect.anything(),
-      'post-id-to-update',
-      { comment: 'Updated post' },
     );
   });
 });

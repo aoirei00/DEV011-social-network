@@ -1,22 +1,28 @@
 import {
   db, collection, addDoc, getDocs, orderBy, query, onSnapshot, serverTimestamp, doc, deleteDoc,
-  updateDoc, arrayUnion, getFirestore, getDoc,
+  updateDoc, arrayUnion, getFirestore, getDoc, arrayRemove,
 } from './firestore';
 
 const postCollection = collection(db, 'post');
-
-export const createPostFirestore = (comment) => {
+const usersCollection = collection(db, 'users');
+export const createPostFirestore = (comment, userId, name) => {
   addDoc(postCollection, {
     comment,
     date: serverTimestamp(),
     likes: [],
+    userId,
+    name,
   });
 };
 
 export const querySnapshot = getDocs(postCollection);
 
 const q = query(postCollection, orderBy('date', 'desc'));
+export const querySnapshotUsers = getDocs(usersCollection);
+
 export const paintRealTime = (callBack) => onSnapshot(q, callBack);
+/// // hace  una consulta a la bd en tiempo real
+export const usersRealTime = (callBack) => onSnapshot(usersCollection, callBack);
 
 export const deletePost = (id) => deleteDoc(doc(db, 'post', id));
 
@@ -41,9 +47,9 @@ export const setLikes = async (postId, userId) => {
     console.log(getDocuement.data().likes);
     if (getDocuement.data().likes.includes(userId)) {
       console.log('deberria entrar cuando ya este el like');
-      const newArr = getDocuement.data().likes.filter((like) => like !== userId);
+      //const newArr = getDocuement.data().likes.filter((like) => like !== userId);
       updateDoc(postRef, {
-        likes: newArr,
+        likes: arrayRemove(userId),
       });
     } else {
       console.log('entra al like eeeeeeeeeeeeeeeeeeeeeeeeeeeee');

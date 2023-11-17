@@ -13,7 +13,7 @@ function head(navigateTo) {
   imgLogoWall.classList.add('imgLogo-wall');
   btnSignUpWall.classList.add('btnSignUp-wall');
 
-  imgLogoWall.src = './img-sn/festilogoLetras.svg';
+  imgLogoWall.src = './img-sn/festilogoLetras-1-01.svg';
   btnSignUpWall.textContent = 'Sign Out';
   btnSignUpWall.addEventListener('click', () => {
     signOutUser()
