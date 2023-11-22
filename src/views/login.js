@@ -93,7 +93,6 @@ function login(navigateTo) {
         btnContinue.addEventListener('click', () => {
           welcomeModal.style.display = 'none';
         });
-
         // navigateTo('/muro');
       })
       .catch((error) => {
