@@ -1,0 +1,101 @@
+.welcomeModal {
+    display: block;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    /* background: linear-gradient(to bottom, #dd00ff7e, #7004fe62); */
+    background-color: rgba(0, 0, 0, 0.705);
+    padding-top: 60px;
+}
+
+.contentModal {
+    background-color: white;
+    margin: 15% auto;
+    padding: 15px;
+    border: 1px solid #888888c7;
+    border-radius: 20px;
+    width: 30%;
+    text-align: center;
+}
+
+.modalImg {
+    /* background-image: url(/src/img-sn/profile.jpg); */
+}
+
+.modalText {
+    color: rgb(36, 34, 34);
+    font-family: 'Inter', sans-serif;
+    font-size: medium;
+    font-weight: bolder;
+    padding: 20px;
+}
+
+.continueBtn {
+    width: 90px;
+    height: 32px;
+    margin-bottom: 15px;
+    margin-left: 3%;
+    border-radius: 6px;
+    background: linear-gradient(to bottom, #DB00FF, #7204FE);
+    color: #FFF;
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    font-style: normal;
+    border: none;
+}
+
+@media screen and (min-width: 360px) and (max-width: 767px) {
+    .welcomeModal {
+        display: block;
+        position: fixed;
+        z-index: 1;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        /* background: linear-gradient(to bottom, #dd00ff7e, #7004fe62); */
+        background-color: rgba(0, 0, 0, 0.705);
+        padding-top: 60px;
+    }
+
+    .contentModal {
+        background-color: white;
+        margin: 70% auto;
+        padding: 15px;
+        border: 1px solid #888888c7;
+        border-radius: 20px;
+        width: 60%;
+        text-align: center;
+    }
+
+    .modalImg {
+        /* background-image: url(/src/img-sn/profile.jpg); */
+    }
+
+    .modalText {
+        color: rgb(36, 34, 34);
+        font-family: 'Inter', sans-serif;
+        font-size: medium;
+        font-weight: bolder;
+        padding: 20px;
+    }
+
+    .continueBtn {
+        width: 90px;
+        height: 32px;
+        margin-bottom: 15px;
+        margin-left: 3%;
+        border-radius: 6px;
+        background: linear-gradient(to bottom, #DB00FF, #7204FE);
+        color: #FFF;
+        font-family: 'Inter', sans-serif;
+        font-size: 15px;
+        font-style: normal;
+        border: none;
+    }
+}

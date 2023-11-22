@@ -1,0 +1,18 @@
+@import './views/register/register.css';
+@import url('https://fonts.googleapis.com/css2?family=Inter');
+
+
+
+body, html {
+    height: 100%;
+  }
+  
+  body {
+    margin: 0;
+    padding: 0;
+    background-image: url('./img-sn/festilogo1.png'); /* Reemplaza 'ruta_de_tu_imagen.jpg' con la ruta real de tu imagen */
+    background-size: cover; /* Esto hace que la imagen cubra todo el fondo */
+    background-repeat: no-repeat; /* Esto evita que se repita si la imagen es pequeña */
+
+  }
+
