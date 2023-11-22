@@ -33,7 +33,7 @@ body{
 .namepro {
   position: relative; 
   top: 270px;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: medium;
   color: cornsilk;
   text-align: center;
@@ -41,7 +41,7 @@ body{
 .addresspro {
   position: relative; 
   top: 275px;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: small;
   color: rgba(255, 248, 220, 0.61);
   text-align: center;
@@ -99,7 +99,7 @@ body{
   .namepro {
     position: relative; 
     top: 230px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Inter', sans-serif;
     font-size: medium;
     color: cornsilk;
     text-align: center;
@@ -107,7 +107,7 @@ body{
   .addresspro {
     position: relative; 
     top: 235px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Inter', sans-serif;
     font-size: small;
     color: rgba(255, 248, 220, 0.61);
     text-align: center;

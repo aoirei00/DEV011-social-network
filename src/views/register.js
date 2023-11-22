@@ -1,6 +1,7 @@
 import { updateProfile } from 'firebase/auth';
 // import head from './wall/head';
 import { createEmailPassword } from '../lib/auth.js';
+import { addUserToFirestore } from '../lib/index.js';
 
 function register(navigateTo) {
   // const headComponents = head('aqui');
@@ -48,7 +49,7 @@ function register(navigateTo) {
   </div>
 `;
   const registerButton = containerReg.querySelector('#registerButton');
-  registerButton.addEventListener('click', () => {
+  registerButton.addEventListener('click', (event) => {
     event.preventDefault();
     const email = containerReg.querySelector('#emailAdress').value;
     const password = containerReg.querySelector('#password').value;
@@ -90,6 +91,7 @@ function register(navigateTo) {
           displayName: name,
         }).then(() => {
         // Perfil actualizado con éxito
+          addUserToFirestore(user.uid, name);
           console.log('Perfil de usuario actualizado con éxito:', user);
         }).catch((error) => {
         // Maneja errores de actualización de perfil

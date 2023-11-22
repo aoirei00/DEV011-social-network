@@ -84,27 +84,8 @@ function muro(navigateTo) {
 
     openModal(btnsDelete);
     openModalEdit(btnsEdit);
-    syncLikes(btnsLike);
-    printLike(btnsLike, arrayLikes);
+    sendLikes(btnsLike);
   });
-
-  function printLike(btnsLike, arrayLikes) {
-    console.log(arrayLikes.length);
-    btnsLike.forEach((btn) => {
-      printLikes(btn);
-    });
-
-    validacionLikesUsers(arrayLikes)
-      .then((result) => {
-        if (result) {
-          console.log(result);
-        }
-      })
-      .catch((error) => {
-        console.error('Error al validar likes:', error);
-      // Manejar el error si ocurre alguno durante la validación de likes
-      });
-  }
 
   // obtiene el usuario logeado y cuando lo tiene lo guarda en localstorage
   const getUserId = () => new Promise((resolve) => {
@@ -121,43 +102,25 @@ function muro(navigateTo) {
     });
   });
 
-  async function validacionLikesUsers(arrayUsers) {
-    if (arrayUsers === 'undefined' || !arrayUsers) {
-      return false;
-    }
-    const userId = await getUserId();
+  async function sendLikes(btnsLike) {
+    const userId = await getUserId(); // Esperar a que se resuelva la promesa
 
-    arrayUsers.forEach((item) => {
-      if (item.includes(userId)) {
-        console.log(`${userId} está en el array.`);
-        return true;
-      }
-      console.log(`${userId} no está en el array.`);
-      return false;
-    });
-    console.log(`${userId} no está en el array.`);
-    return false;
-  }
+    if (userId) {
+      btnsLike.forEach((btn) => {
+        btn.addEventListener('click', async () => {
+          const postId = btn.dataset.id;
 
-  // metodo para sincronizar los likes de la coleccion con los datos que muestra en los post
-  function syncLikes(btnsLike) {
-    btnsLike.forEach((btn) => {
-      // Cuando hagas clic en el botón "like"
-      btn.addEventListener('click', async () => {
-        const postId = btn.dataset.id;
-        const userId = await getUserId(); // Esperar a que se resuelva la promesa
-        if (userId) {
-          // printLikes(btn);
-          setLikes(postId, userId);
-        } else {
-          console.error('Error: userId no está definido.');
-        }
+          try {
+            await setLikes(postId, userId); // Esperar a que se actualicen los likes
+            // printLikes(btnsLike); // Actualizar las clases después de cambiar los likes
+          } catch (error) {
+            console.error('Error al establecer likes:', error);
+          }
+        });
       });
-    });
-  }
-
-  function printLikes(btnLike) {
-    btnLike.classList.add('iconLike-post');
+    } else {
+      console.error('Error: userId no está definido.');
+    }
   }
 
   function openModal(btnsDelete) {

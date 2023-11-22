@@ -7,6 +7,7 @@ import {
 const postCollection = collection(db, 'post');
 const usersCollection = collection(db, 'users');
 
+//
 export const createPostFirestore = (comment, userId, name) => {
   addDoc(postCollection, {
     comment,
@@ -39,6 +40,7 @@ export const updatePost = async (id, newData) => {
   }
 };
 
+// Funcion para agregar like
 export const setLikes = async (postId, userId) => {
   try {
     const bd = getFirestore();
@@ -51,6 +53,7 @@ export const setLikes = async (postId, userId) => {
       updateDoc(postRef, {
         likes: arrayRemove(userId),
       });
+      console.log(`Se quitoo like al post ${postId}`);
     } else {
       console.log('entra al like eeeeeeeeeeeeeeeeeeeeeeeeeeeee');
       updateDoc(postRef, {
@@ -59,9 +62,35 @@ export const setLikes = async (postId, userId) => {
     }
 
     console.log(`Se dio like al post ${postId}`);
-    console.log(`usuario ${userId}`);
+    // console.log(`usuario ${userId}`);
   } catch (error) {
     console.error('Error al actualizar los likes:', error);
   }
 };
 
+// Funcion para agregar a los usuarios registrados a la coleccion de users de firestore
+export const addUserToFirestore = async (uid, name) => {
+  try {
+    // Añade el usuario a la colección 'users' con su UID y nombre
+    await addDoc(usersCollection, {
+      name,
+      uid,
+    });
+
+    console.log('Usuario añadido a la colección users con éxito');
+  } catch (error) {
+    console.error('Error al añadir usuario a la colección users:', error);
+  }
+};
+
+// Funcion para obtener los id de usuario de la coleccion users
+export const getUserFromFirestore = async (userId) => {
+  try {
+    const userDoc = await getDoc(doc(usersCollection, userId));
+
+    return userDoc;
+  } catch (error) {
+    console.error('Error al obtener usuario desde Firestore:', error);
+    throw error;
+  }
+};

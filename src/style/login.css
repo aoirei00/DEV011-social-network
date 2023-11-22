@@ -9,7 +9,7 @@
 }
 .logIn {
     color: #FFF;
-    font-family: Inter;
+    font-family: 'Inter', sans-serif;
     font-size: 25px;
     margin-bottom: 46px;
     margin-top: 40px;
@@ -24,7 +24,7 @@
 }
 .emailLog {
     color: white;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Inter', sans-serif;
     margin: 6% 40% 2% 0%;
     font-weight: bold;
     display: flex;
@@ -32,7 +32,7 @@
 }
 .passwordLog {
     color: white;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Inter', sans-serif;
     margin: 6% 45% 2% 0%;
     font-weight: bold;
     display: flex;
@@ -51,7 +51,7 @@
 }
 .linkToResetPassword a {
     color: white;
-    font-family: Inter;
+    font-family: 'Inter', sans-serif;
     font-size: small;
     justify-content: flex-end;
     align-items: center;
@@ -63,7 +63,7 @@
     border-radius: 6px;
     background: linear-gradient(to bottom, #DB00FF, #7204FE);
     color: #FFF;
-    font-family: Inter;
+    font-family: 'Inter', sans-serif;
     font-size: 15px;
     font-style: normal;
     line-height: normal;
@@ -73,7 +73,7 @@
     margin: 0% 0% 0% 0%;
     color: cornsilk;
     text-align: center;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Inter', sans-serif;
 }
 .googlelog {
 
@@ -99,7 +99,7 @@
     border-radius: 6px;
     background: linear-gradient(to bottom, #DB00FF, #7204FE);
     color: #FFF;
-    font-family: Inter;
+    font-family: 'Inter', sans-serif;
     font-size: 15px;
     font-style: normal;
     line-height: normal;
@@ -112,7 +112,7 @@
     border-radius: 6px;
     background: linear-gradient(to bottom, #DB00FF, #7204FE);
     color: #FFF;
-    font-family: Inter;
+    font-family: 'Inter', sans-serif;
     font-size: 15px;
     font-style: normal;
     line-height: normal;
@@ -156,7 +156,7 @@
         border-radius: 6px;
         background: linear-gradient(to bottom, #DB00FF, #7204FE);
         color: #FFF;
-        font-family: Inter;
+        font-family: 'Inter', sans-serif;
         font-size: 15px;
         font-style: normal;
         font-weight: 600;

@@ -37,11 +37,27 @@ function post(data, id, loggedUser) {
     btnEdit.style.display = 'none';
     btnDelete.style.display = 'none';
     // like.classList.add('iconLike-post2');
-    console.log(`el senior del post si esta...${loggedUser}`);
+    // console.log(`el senior del post si esta...${loggedUser}`);
   }
 
+  const idUserLike = data.likes;
+  if (loggedUser !== idUserLike) {
+    like.classList.add('iconLike-post');
+    like.classList.remove('iconLike-post2'); // Elimina la clase iconLike-post2 si está presente
+  } else {
+    like.classList.remove('iconLike-post'); // Elimina la clase iconLike-post si está presente
+    like.classList.add('iconLike-post2');
+  }
+
+  // const idUserLike = data.likes;
+  // if (loggedUser !== idUserLike) {
+  //   like.classList.add('iconLike-post');
+  // } else {
+  //   like.classList.add('iconLike-post2');
+  // }
+
   if (!data.likes.length) {
-    console.log('vacio');
+    // console.log('vacio');
     like.classList.add('iconLike-post2');
   }
 
