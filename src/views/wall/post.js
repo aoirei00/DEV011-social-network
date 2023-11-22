@@ -1,5 +1,5 @@
 // import modalConfirmationDelete from '../modals/modalConfirmationDelete.js';
-function post(data, id) {
+function post(data, id, loggedUser) {
   const containerPost = document.createElement('div');
   const headPost = document.createElement('div');
   const containerUserPost = document.createElement('div');
@@ -31,10 +31,28 @@ function post(data, id) {
   btnDelete.setAttribute('data-id', id);
   like.setAttribute('data-id', id);
   // printLike ? like.classList.add('iconLike-post') : null;
-  if (!data.likes.length) {
-    console.log('vacio');
+
+  const idUserPost = data.userId ? data.userId : 0;
+  if (loggedUser !== idUserPost) {
+    btnEdit.style.display = 'none';
+    btnDelete.style.display = 'none';
+    // like.classList.add('iconLike-post2');
+  }
+
+  const idUserLike = data.likes;
+  if (loggedUser !== idUserLike) {
+    like.classList.add('iconLike-post');
+    like.classList.remove('iconLike-post2'); // Elimina la clase iconLike-post2 si está presente
+  } else {
+    like.classList.remove('iconLike-post'); // Elimina la clase iconLike-post si está presente
     like.classList.add('iconLike-post2');
   }
+
+  if (!data.likes.length) {
+    // console.log('vacio');
+    like.classList.add('iconLike-post2');
+  }
+
   cardPost.classList.add('card-post');
   textAreaPost.classList.add('txtArea-post');
   textAreaPost.setAttribute('readonly', 'true');
